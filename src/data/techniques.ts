@@ -1,0 +1,120 @@
+import type { Technique } from "./types"
+
+/** Transition toolkit — educational cards, no external resource required. */
+export const techniques: Technique[] = [
+  {
+    id: "eq-blend",
+    name: "EQ Blend",
+    description: "Two tracks run together while you trade frequency bands between them.",
+    whenToUse: "Long, seamless transitions between tracks with similar structure and tempo.",
+    difficulty: "beginner",
+    genres: ["house", "techno", "minimal"],
+    walkthrough: [
+      "Cut the low band on the incoming track before you open the fader.",
+      "Bring the incoming channel up to full with bass still cut.",
+      "Trade: drop the outgoing bass as you restore the incoming bass, on a phrase boundary.",
+      "Roll off the outgoing mids, then highs, over the next 16 bars.",
+      "Close the outgoing fader once nothing is left to hear.",
+    ],
+  },
+  {
+    id: "bass-swap",
+    name: "Bass Swap",
+    description: "The sharp version of an EQ blend: both basses swap on a single downbeat.",
+    whenToUse: "When both tracks have strong, similar low-end that would clash if layered.",
+    difficulty: "intermediate",
+    genres: ["house", "tech house", "techno"],
+    walkthrough: [
+      "Beatmatch and phrase-align both tracks.",
+      "Incoming bass cut, fader open, let the top end sit over the outgoing groove.",
+      "On the downbeat of a new 16, kill the outgoing bass and restore the incoming bass in one move.",
+      "Clean up the outgoing mids over the following bars.",
+    ],
+  },
+  {
+    id: "echo-out",
+    name: "Echo Out",
+    description: "Feed the outgoing track into a delay and cut the channel, leaving a tail.",
+    whenToUse: "Genre or tempo jumps where a blend would not work.",
+    difficulty: "beginner",
+    genres: ["open format", "hip hop", "bass"],
+    walkthrough: [
+      "Set a delay to 1/2 or 1/4 with high feedback.",
+      "Engage the effect on the last bar of a phrase.",
+      "Cut the channel fader immediately — the tail keeps playing.",
+      "Start the next track on the downbeat while the tail decays.",
+    ],
+  },
+  {
+    id: "loop-transition",
+    name: "Loop Transition",
+    description: "Loop a clean section of the outgoing track to buy yourself time.",
+    whenToUse: "Long blends, or when the outgoing track has no usable outro.",
+    difficulty: "intermediate",
+    genres: ["techno", "house", "drum and bass"],
+    walkthrough: [
+      "Set a 4- or 8-bar loop on a percussive section of the outgoing track.",
+      "Halve the loop length to build tension if the room needs it.",
+      "Blend the incoming track under the loop.",
+      "Exit the loop and close the outgoing channel on a phrase boundary.",
+    ],
+  },
+  {
+    id: "filter-transition",
+    name: "Filter Transition",
+    description: "Sweep a high-pass on the outgoing track while the incoming one takes the bottom.",
+    whenToUse: "Fast, forgiving transitions when structures do not line up neatly.",
+    difficulty: "beginner",
+    genres: ["house", "disco", "nu disco"],
+    walkthrough: [
+      "Open the incoming channel with its own filter high-passed.",
+      "Sweep the outgoing track's filter up over 8 bars.",
+      "Release the incoming filter on the downbeat.",
+      "Close the outgoing channel once it is thin enough to disappear.",
+    ],
+  },
+  {
+    id: "drop-swap",
+    name: "Drop Swap",
+    description: "Cut hard from one track to another exactly on a drop.",
+    whenToUse: "Peak-time moments and open-format sets where energy beats subtlety.",
+    difficulty: "intermediate",
+    genres: ["open format", "bass", "trance"],
+    walkthrough: [
+      "Cue the incoming track precisely at its drop.",
+      "Ride the outgoing breakdown to the last beat before its own drop.",
+      "Cut both faders in the same motion on the downbeat.",
+      "Do not linger — the moment is the whole trick.",
+    ],
+  },
+  {
+    id: "acapella-transition",
+    name: "Acapella Transition",
+    description: "Carry a vocal across the join so the listener hears continuity, not a change.",
+    whenToUse: "Bridging two instrumentals that share a key but little else.",
+    difficulty: "advanced",
+    genres: ["house", "garage", "open format"],
+    walkthrough: [
+      "Check the acapella's key against the incoming track — same Camelot code or one step.",
+      "Bring the acapella in over the outgoing instrumental's break.",
+      "Swap the instrumental underneath while the vocal holds attention.",
+      "Fade the acapella once the incoming track establishes itself.",
+    ],
+  },
+  {
+    id: "tempo-transition",
+    name: "Tempo Transition",
+    description: "Move the set to a new tempo without the change being audible.",
+    whenToUse: "Shifting tempo ranges across a long set, or half/double-time moves.",
+    difficulty: "advanced",
+    genres: ["open format", "breaks", "drum and bass"],
+    walkthrough: [
+      "Nudge the outgoing track's pitch gradually across a full phrase, no more than 2% at a time.",
+      "Or use a percussive tool track that reads at both tempos.",
+      "For a half/double jump, match 70 to 140 and let the listener's ear pick the pulse.",
+      "Land the incoming track on a downbeat, then relax the pitch back to zero.",
+    ],
+  },
+]
+
+export const techniqueById = new Map(techniques.map((t) => [t.id, t]))
