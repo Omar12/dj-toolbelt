@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-26T05:29:40Z",
+  "title": "Design System: DJ Toolbelt",
+  "extensions": {
+    "colorMeta": {
+      "cue-orange": {
+        "role": "primary",
+        "displayName": "Cue Orange",
+        "canonical": "#ff5b2e",
+        "tonalRamp": ["oklch(0.20 0.08 35)", "oklch(0.30 0.12 35)", "oklch(0.40 0.16 35)", "oklch(0.50 0.19 35)", "oklch(0.60 0.20 35)", "oklch(0.68 0.20 35)", "oklch(0.80 0.13 35)", "oklch(0.93 0.05 35)"]
+      },
+      "cue-orange-dim": {
+        "role": "primary",
+        "displayName": "Cue Orange Dim",
+        "canonical": "#7a2a16",
+        "tonalRamp": ["oklch(0.18 0.06 35)", "oklch(0.26 0.08 35)", "oklch(0.35 0.10 35)", "oklch(0.44 0.11 35)", "oklch(0.53 0.11 35)", "oklch(0.64 0.10 35)", "oklch(0.78 0.07 35)", "oklch(0.92 0.03 35)"]
+      },
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "#08080a",
+        "tonalRamp": ["oklch(0.12 0.004 285)", "oklch(0.18 0.004 285)", "oklch(0.26 0.005 285)", "oklch(0.36 0.006 285)", "oklch(0.48 0.007 285)", "oklch(0.62 0.007 285)", "oklch(0.78 0.005 285)", "oklch(0.95 0.003 285)"]
+      },
+      "crate-surface": {
+        "role": "neutral",
+        "displayName": "Crate Surface",
+        "canonical": "#101013",
+        "tonalRamp": ["oklch(0.15 0.004 285)", "oklch(0.21 0.005 285)", "oklch(0.29 0.005 285)", "oklch(0.39 0.006 285)", "oklch(0.50 0.007 285)", "oklch(0.64 0.007 285)", "oklch(0.79 0.005 285)", "oklch(0.95 0.003 285)"]
+      },
+      "crate-surface-raised": {
+        "role": "neutral",
+        "displayName": "Crate Surface Raised",
+        "canonical": "#17171c",
+        "tonalRamp": ["oklch(0.17 0.006 285)", "oklch(0.23 0.007 285)", "oklch(0.31 0.008 285)", "oklch(0.41 0.008 285)", "oklch(0.52 0.008 285)", "oklch(0.65 0.007 285)", "oklch(0.80 0.005 285)", "oklch(0.95 0.003 285)"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#26262d",
+        "tonalRamp": ["oklch(0.16 0.006 285)", "oklch(0.22 0.008 285)", "oklch(0.28 0.009 285)", "oklch(0.38 0.009 285)", "oklch(0.50 0.009 285)", "oklch(0.64 0.008 285)", "oklch(0.79 0.006 285)", "oklch(0.95 0.003 285)"]
+      },
+      "dust-grey": {
+        "role": "neutral",
+        "displayName": "Dust Grey",
+        "canonical": "#8b8b96",
+        "tonalRamp": ["oklch(0.18 0.008 285)", "oklch(0.26 0.010 285)", "oklch(0.35 0.012 285)", "oklch(0.45 0.013 285)", "oklch(0.55 0.014 285)", "oklch(0.63 0.014 285)", "oklch(0.79 0.009 285)", "oklch(0.95 0.004 285)"]
+      },
+      "sleeve-white": {
+        "role": "neutral",
+        "displayName": "Sleeve White",
+        "canonical": "#ededf0",
+        "tonalRamp": ["oklch(0.20 0.004 285)", "oklch(0.30 0.005 285)", "oklch(0.42 0.005 285)", "oklch(0.54 0.006 285)", "oklch(0.66 0.006 285)", "oklch(0.78 0.005 285)", "oklch(0.87 0.004 285)", "oklch(0.95 0.003 285)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "One per page: the question the page answers. Max-width 3xl measure." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles inside SectionHeading, always over a hairline rule." },
+      "title": { "displayName": "Title", "purpose": "Card names — resources, workflows, collections, tool shells." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and prose; Dust Grey inside cards, Sleeve White in running text." },
+      "label": { "displayName": "Label / Mono", "purpose": "Eyebrows, chips, field labels, nav, counts, keyboard hints. The connective tissue." },
+      "readout": { "displayName": "Readout", "purpose": "Computed tool values — BPM, selected key. Always tabular-nums." }
+    },
+    "shadows": [
+      { "name": "overlay", "value": "0 20px 25px -5px rgba(0,0,0,0.5), 0 8px 10px -6px rgba(0,0,0,0.5)", "purpose": "The only shadow in the system. Floating overlays that leave the document flow — currently just the search results dropdown." }
+    ],
+    "motion": [
+      { "name": "transition-colors", "value": "color 150ms, background-color 150ms, border-color 150ms", "purpose": "The only transition in the system. Hover and focus are colour shifts, never movement." },
+      { "name": "reduced-motion", "value": "animation-duration: 0.01ms; transition-duration: 0.01ms", "purpose": "Global prefers-reduced-motion override in globals.css." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "1152px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "External links and primary tool actions. Dim orange at rest, solid orange on hover with black text.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Open site<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(255,91,46,0.6); background: rgba(122,42,22,0.3); color: var(--signal); padding: 8px 12px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; border-radius: 0; transition: background-color 150ms, color 150ms; } .ds-btn-primary:hover { background: var(--signal); color: #000; } .ds-btn-primary:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions — Reset, Clear filters. Hairline border, no fill at any state.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">Clear filters</button>",
+      "css": ".ds-btn-ghost { border: 1px solid var(--border); background: transparent; color: var(--muted); padding: 6px 12px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 0; cursor: pointer; transition: color 150ms, border-color 150ms; } .ds-btn-ghost:hover { color: var(--signal); border-color: rgba(255,91,46,0.6); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }"
+    },
+    {
+      "name": "Tap Pad",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The BPM tapper's oversized target. Same accent language, slab proportions.",
+      "html": "<button class=\"ds-tap-pad\" type=\"button\">Tap · or press space</button>",
+      "css": ".ds-tap-pad { width: 100%; border: 1px solid rgba(255,91,46,0.6); background: rgba(122,42,22,0.3); color: var(--signal); padding: 40px 16px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 14px; text-transform: uppercase; letter-spacing: 0.2em; border-radius: 0; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-tap-pad:hover { background: var(--signal); color: #000; } .ds-tap-pad:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }"
+    },
+    {
+      "name": "Pill",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Metadata badge — pricing, tags, skill level, step counts. Default and signal tones.",
+      "html": "<span class=\"ds-pill\">Freemium</span> <span class=\"ds-pill ds-pill-signal\">Free</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--border); background: var(--surface-2); color: var(--muted); padding: 2px 8px; border-radius: 4px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; } .ds-pill-signal { background: rgba(122,42,22,0.4); color: var(--signal); border-color: rgba(255,91,46,0.4); }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip-signal",
+      "description": "Square toggle in the resource explorer, carrying aria-pressed. Selected reads solid orange-on-dim.",
+      "html": "<button class=\"ds-chip-filter\" type=\"button\" aria-pressed=\"false\">Free</button> <button class=\"ds-chip-filter ds-chip-filter-active\" type=\"button\" aria-pressed=\"true\">Paid</button>",
+      "css": ".ds-chip-filter { border: 1px solid var(--border); background: transparent; color: var(--muted); padding: 4px 8px; border-radius: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: color 150ms, border-color 150ms, background-color 150ms; } .ds-chip-filter:hover { border-color: var(--muted); } .ds-chip-filter-active { border-color: var(--signal); background: rgba(122,42,22,0.4); color: var(--signal); } .ds-chip-filter:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }"
+    },
+    {
+      "name": "Resource Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The system's workhorse: hairline rectangle, title link covering the card, description, metadata pills.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-top\"><h3 class=\"ds-card-title\"><a href=\"#\">Bandcamp</a></h3><button class=\"ds-fav\" type=\"button\" aria-pressed=\"false\" aria-label=\"Save to My Toolbelt\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 3 2.9 5.9 6.1.9-4.5 4.3 1.1 6.4L12 17.5 6.4 20.5l1.1-6.4L3 9.8l6.1-.9Z\"/></svg></button></div><p class=\"ds-card-body\">Buy direct from labels and artists, with the widest catalogue of independent electronic music.</p><div class=\"ds-card-meta\"><span class=\"ds-pill ds-pill-signal\">Free</span><span class=\"ds-pill\">Store</span></div></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--surface); padding: 16px; border-radius: 0; transition: border-color 150ms; } .ds-card:hover { border-color: rgba(139,139,150,0.6); } .ds-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; } .ds-card-title { font-size: 16px; font-weight: 600; letter-spacing: -0.025em; margin: 0; } .ds-card-title a { color: var(--foreground); text-decoration: none; } .ds-card:hover .ds-card-title a { color: var(--signal); } .ds-card-body { margin: 8px 0 0; flex: 1; font-size: 14px; line-height: 1.625; color: var(--muted); } .ds-card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; } .ds-fav { border: 1px solid var(--border); background: var(--surface-2); color: var(--muted); padding: 6px; border-radius: 4px; cursor: pointer; transition: color 150ms, border-color 150ms; } .ds-fav:hover { color: var(--signal); border-color: rgba(255,91,46,0.5); } .ds-fav[aria-pressed=\"true\"] svg { fill: var(--signal); color: var(--signal); }"
+    },
+    {
+      "name": "Tool Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Numeric input in the tool panels. Mono text, mono uppercase label above, border-as-focus-ring.",
+      "html": "<label class=\"ds-field-label\">Track A BPM<input class=\"ds-field\" type=\"number\" value=\"124\" step=\"0.1\"></label>",
+      "css": ".ds-field-label { display: block; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); } .ds-field { display: block; width: 100%; margin-top: 4px; border: 1px solid var(--border); background: var(--surface-2); color: var(--foreground); padding: 8px 12px; border-radius: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 14px; font-variant-numeric: tabular-nums; outline: none; transition: border-color 150ms; } .ds-field:focus { border-color: rgba(255,91,46,0.6); }"
+    },
+    {
+      "name": "Search Bar",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Header search: icon, sans input, mono slash-key hint. The wrapper border is the focus indicator.",
+      "html": "<div class=\"ds-search\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input type=\"search\" placeholder=\"Search DJ Toolbelt…\" aria-label=\"Search\"><kbd>/</kbd></div>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); background: var(--surface); padding: 8px 12px; border-radius: 0; color: var(--muted); } .ds-search:focus-within { border-color: rgba(255,91,46,0.6); } .ds-search input { flex: 1; min-width: 0; background: transparent; border: none; outline: none; color: var(--foreground); font-size: 14px; } .ds-search input::placeholder { color: var(--muted); } .ds-search kbd { border: 1px solid var(--border); padding: 2px 6px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 10px; color: var(--muted); }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Sticky header's second row: mono uppercase section links that scroll horizontally on narrow screens.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><ul><li><a href=\"#\" class=\"ds-nav-link\">Discover</a></li><li><a href=\"#\" class=\"ds-nav-link\">Prepare</a></li><li><a href=\"#\" class=\"ds-nav-link\">Mix</a></li><li><a href=\"#\" class=\"ds-nav-link\">Record</a></li><li><a href=\"#\" class=\"ds-nav-link\">Publish</a></li></ul></nav>",
+      "css": ".ds-nav ul { display: flex; gap: 16px; overflow-x: auto; padding: 0 0 8px; margin: 0; list-style: none; } .ds-nav-link { white-space: nowrap; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; transition: color 150ms; } .ds-nav-link:hover { color: var(--foreground); } .ds-nav-link:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }"
+    },
+    {
+      "name": "Chain Diagram",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature component: a workflow rendered as a signal path of mono nodes joined by orange chevrons.",
+      "html": "<ol class=\"ds-chain\" aria-label=\"Workflow chain\"><li><span class=\"ds-chain-node\">Track</span><span class=\"ds-chain-sep\" aria-hidden=\"true\">›</span></li><li><span class=\"ds-chain-node\">Label</span><span class=\"ds-chain-sep\" aria-hidden=\"true\">›</span></li><li><span class=\"ds-chain-node\">DJ</span></li></ol>",
+      "css": ".ds-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; } .ds-chain li { display: flex; align-items: center; gap: 8px; } .ds-chain-node { border: 1px solid var(--border); background: var(--surface-2); color: var(--foreground); padding: 4px 8px; border-radius: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; } .ds-chain-sep { color: var(--signal); font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Mono eyebrow in Cue Orange over a semibold headline, closed by a hairline rule.",
+      "html": "<div class=\"ds-heading\"><div><p class=\"ds-eyebrow\">I need new music</p><h2 class=\"ds-headline\">Five ways to dig</h2></div><a class=\"ds-textlink\" href=\"#\">All workflows</a></div>",
+      "css": ".ds-heading { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; } .ds-eyebrow { margin: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--signal); } .ds-headline { margin: 4px 0 0; font-size: 30px; font-weight: 600; letter-spacing: -0.025em; color: var(--foreground); } .ds-textlink { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; text-underline-offset: 4px; } .ds-textlink:hover { color: var(--signal); text-decoration: underline; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Record Shop Backroom",
+    "overview": "The interface is the room behind the counter: lights low, crates in rows, hand-written dividers, and one orange sticker on the records worth pulling. Nothing here performs. The content — a resource, a workflow chain, a BPM readout — sits on a near-black ground inside a hairline rectangle, and the eye moves by reading, not by following decoration. Density is high and deliberate: this is a catalog someone works through mid-session, not a page someone browses.\n\nThe material language is flat and physical at once. Surfaces are separated by tone (#08080a ground → #101013 panel → #17171c inset) and by a single 1px hairline (#26262d), never by shadow. Type does the structural work: Geist Sans carries the reading, Geist Mono carries every technical utterance — eyebrows, tags, key codes, BPM values, nav labels, keyboard hints. The split is not stylistic. Mono means this is data or a control; sans means this is a sentence.\n\nControls feel tactile and confident: square corners, firm borders, states that shift colour decisively rather than fading. Cue Orange is the only chromatic voice in the system and it is rationed. The confirmed anti-references are the SaaS dashboard, the neon EDM poster, skeuomorphic gear, and vinyl-nostalgia kitsch.",
+    "keyCharacteristics": [
+      "Dark-only. No light theme, no theme toggle — the room has one lighting condition.",
+      "Square by default; radius is an exception measured in a single 4px step.",
+      "Flat by rule: tonal layers and hairlines instead of shadows.",
+      "Monospace as the voice of every number, tag, label and control.",
+      "One accent colour, used sparingly enough that it always means something."
+    ],
+    "rules": [
+      { "name": "The One Sticker Rule", "body": "Cue Orange covers well under 10% of any screen. If two things on a screen are orange for two different reasons, one of them is wrong.", "section": "colors" },
+      { "name": "The Hairline Rule", "body": "Separation is a 1px #26262d border or a tonal step — never a shadow, never a gradient, never a coloured divider.", "section": "colors" },
+      { "name": "The Black Text Exception", "body": "Text on a solid Cue Orange fill is pure black (#000), not Sleeve White. This appears only on button hover and the selected Camelot key.", "section": "colors" },
+      { "name": "The Mono Means Machine Rule", "body": "If it is a number, a tag, a key code, a control label, or a piece of navigation, it is Geist Mono, uppercase, wide-tracked. If it is a sentence, it is Geist Sans, sentence case. Nothing is both.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "Any number that changes in place — BPM, intervals, tap counts, durations, storage — carries tabular-nums so digits do not dance while the value updates.", "section": "typography" },
+      { "name": "The Gutter Constant Rule", "body": "Horizontal padding is always 16px and the column never exceeds 1152px. Wide screens get more whitespace, never a wider measure.", "section": "layout" },
+      { "name": "The No Shadow Rule", "body": "Surfaces never lift. If something needs to feel separate, move it a tonal step or give it a hairline. Shadows are permitted only on elements that overlay the page (dropdowns, popovers) — never on cards, buttons, headers or inputs.", "section": "elevation" },
+      { "name": "The Hover Is Colour, Not Height Rule", "body": "Hover changes border colour, text colour, or background tone. It never translates, scales, or casts.", "section": "elevation" },
+      { "name": "The Square Default Rule", "body": "New components ship with zero radius. Reaching for a radius above 4px means the component belongs to a different system.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do build new surfaces from the three-tone stack — #08080a ground, #101013 panel, #17171c inset — plus 1px #26262d hairlines.",
+      "Do set every number, tag, control label and nav item in Geist Mono, uppercase, tracking-[0.2em] at 11px.",
+      "Do give changing numeric readouts tabular-nums.",
+      "Do express hover as a colour shift on border or text, with transition-colors.",
+      "Do use the wrapper-border focus shift on inputs and rely on the global 2px Cue Orange :focus-visible outline elsewhere — never remove a focus indicator.",
+      "Do keep the column at max-w-6xl with 16px gutters and 40px section rhythm.",
+      "Do pair a mono eyebrow with every section headline when the section answers a question."
+    ],
+    "donts": [
+      "Don't add a light theme, a theme toggle, or any surface lighter than #17171c.",
+      "Don't cast a shadow on a card, button, header or input; only true overlays may have one.",
+      "Don't use a corner radius above 4px, and default to 0.",
+      "Don't introduce a second accent colour, a gradient, or a status palette of greens and reds — severity is already carried by Cue Orange / Sleeve White / Dust Grey.",
+      "Don't let Cue Orange exceed roughly 10% of a screen or appear twice for two different meanings.",
+      "Don't drift toward SaaS-dashboard chrome, neon EDM gradients, skeuomorphic gear textures, or vinyl-nostalgia kitsch.",
+      "Don't animate beyond colour transitions; prefers-reduced-motion is honoured globally and there is nothing decorative to reduce."
+    ]
+  }
+}
