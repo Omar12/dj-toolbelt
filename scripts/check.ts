@@ -2,6 +2,7 @@
 import assert from "node:assert/strict"
 import { allKeys, compatibleKeys, isCompatible, keyAfterPitch, parseKey } from "../src/lib/camelot.ts"
 import { bpmFromTaps, pitchPercent, transitionAdvice, recordingSizeMb, encodedSizeMb } from "../src/lib/bpm.ts"
+import { numProblem, numValue } from "../src/lib/numfield.ts"
 
 // Camelot ↔ musical key mapping anchors.
 assert.equal(parseKey("A minor")?.code, "8A")
@@ -45,3 +46,16 @@ assert.equal(recordingSizeMb(1, 48000, 24, 2).toFixed(2), "17.28")
 assert.equal(encodedSizeMb(60, 320).toFixed(1), "144.0")
 
 console.log("all checks passed")
+
+// Numeric field guard: empty, junk and out-of-range all refuse to produce a number.
+assert.equal(numValue("124", 40, 220), 124)
+assert.equal(numValue("", 40, 220), null)
+assert.equal(numValue("   ", 40, 220), null)
+assert.equal(numValue("abc", 40, 220), null)
+assert.equal(numValue("39.9", 40, 220), null)
+assert.equal(numValue("220.1", 40, 220), null)
+assert.equal(numValue("40", 40, 220), 40) // bounds are inclusive
+assert.equal(numValue("220", 40, 220), 220)
+assert.match(numProblem("", 40, 220), /Nothing entered/)
+assert.match(numProblem("abc", 40, 220), /Not a number/)
+assert.match(numProblem("999", 40, 220), /Outside 40–220/)

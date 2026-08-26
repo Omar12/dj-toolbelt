@@ -46,7 +46,7 @@ export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
       <label htmlFor={`${listId}-input`} className="sr-only">
         Search DJ Toolbelt
       </label>
-      <div className="flex items-center gap-2 border border-line bg-surface px-3 py-2 focus-within:border-signal/60">
+      <div className="flex items-center gap-2 border border-line bg-surface px-3 py-2 focus-within:border-signal">
         <Search size={14} className="shrink-0 text-muted" aria-hidden />
         <input
           id={`${listId}-input`}
@@ -66,7 +66,7 @@ export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
           aria-autocomplete="list"
           className="w-full bg-transparent text-sm outline-none placeholder:text-muted"
         />
-        <kbd className="hidden shrink-0 border border-line px-1.5 py-0.5 font-mono text-[10px] text-muted sm:block">
+        <kbd className="hidden shrink-0 border border-line px-1.5 py-0.5 font-mono text-[11px] text-muted sm:block">
           /
         </kbd>
       </div>
@@ -90,7 +90,7 @@ export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
                   onClick={() => setOpen(false)}
                   className="flex items-baseline gap-3 border-b border-line px-3 py-2.5 last:border-b-0 hover:bg-surface-2"
                 >
-                  <span className="w-20 shrink-0 font-mono text-[10px] uppercase tracking-wider text-signal">
+                  <span className="w-20 shrink-0 font-mono text-[11px] uppercase tracking-wider text-signal">
                     {kindLabel[r.kind]}
                   </span>
                   <span className="min-w-0">

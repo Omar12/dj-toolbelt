@@ -32,6 +32,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         <p className="mt-3 max-w-2xl text-lg text-muted">{c.description}</p>
       </header>
       <div className="py-10">
+        <h2 className="sr-only">Resources in this collection</h2>
         <ResourceGrid resources={getResources(c.resourceIds)} />
       </div>
     </div>

@@ -26,7 +26,7 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
   ).slice(0, 3)
 
   return (
-    <div className="mx-auto max-w-5xl px-4">
+    <div className="mx-auto max-w-6xl px-4">
       <nav aria-label="Breadcrumb" className="pt-8">
         <Link href="/workflows" className="font-mono text-xs uppercase tracking-wider text-muted hover:text-signal">
           ← All workflows

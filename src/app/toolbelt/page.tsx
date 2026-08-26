@@ -17,6 +17,7 @@ export default function ToolbeltPage() {
         </p>
       </header>
       <div className="py-10">
+        <h2 className="sr-only">Saved resources</h2>
         <MyToolbelt />
       </div>
     </div>

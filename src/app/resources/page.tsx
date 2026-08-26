@@ -26,6 +26,7 @@ export default async function ResourcesPage({
         </p>
       </header>
       <div className="py-10">
+        <h2 className="sr-only">Resource explorer</h2>
         <ResourceExplorer resources={resources} initialCategories={known} />
       </div>
     </div>

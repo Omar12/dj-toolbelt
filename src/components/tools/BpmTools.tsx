@@ -2,10 +2,7 @@
 
 import { useCallback, useState } from "react"
 import { bpmFromTaps, pitchPercent, transitionAdvice } from "@/lib/bpm"
-
-const field =
-  "w-full border border-line bg-surface-2 px-3 py-2 font-mono text-sm outline-none focus:border-signal/60"
-const labelClass = "font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+import { allValid, labelClass, NumField, useNumField } from "./NumField"
 
 export function ToolShell({
   id,
@@ -79,97 +76,71 @@ export function BpmTapper() {
 }
 
 export function BpmTransition() {
-  const [a, setA] = useState(124)
-  const [b, setB] = useState(128)
-  const pct = pitchPercent(a, b)
-  const advice = transitionAdvice(a, b)
+  const a = useNumField(124, 40, 220)
+  const b = useNumField(128, 40, 220)
+  const ready = allValid(a, b)
+  const advice = ready ? transitionAdvice(a.value!, b.value!) : null
+  const pct = ready ? pitchPercent(a.value!, b.value!) : 0
   const tone =
-    advice.severity === "easy"
+    advice?.severity === "easy"
       ? "text-signal"
-      : advice.severity === "workable"
+      : advice?.severity === "workable"
         ? "text-foreground"
         : "text-muted"
 
   return (
     <div className="space-y-4">
       <div className="grid gap-3 sm:grid-cols-2">
-        <label className="block">
-          <span className={labelClass}>Track A BPM</span>
-          <input
-            type="number"
-            min={40}
-            max={220}
-            step={0.1}
-            value={a}
-            onChange={(e) => setA(Number(e.target.value))}
-            className={`${field} mt-1`}
-          />
-        </label>
-        <label className="block">
-          <span className={labelClass}>Track B BPM</span>
-          <input
-            type="number"
-            min={40}
-            max={220}
-            step={0.1}
-            value={b}
-            onChange={(e) => setB(Number(e.target.value))}
-            className={`${field} mt-1`}
-          />
-        </label>
+        <NumField label="Track A BPM" state={a} step={0.1} />
+        <NumField label="Track B BPM" state={b} step={0.1} />
       </div>
       <dl className="grid grid-cols-2 gap-4 border-t border-line pt-3 sm:grid-cols-3">
         <div>
           <dt className={labelClass}>Difference</dt>
-          <dd className="font-mono text-2xl tabular-nums">{(b - a).toFixed(1)}</dd>
+          <dd className="font-mono text-2xl tabular-nums">
+            {ready ? (b.value! - a.value!).toFixed(1) : "—"}
+          </dd>
         </div>
         <div>
           <dt className={labelClass}>Pitch on A</dt>
           <dd className="font-mono text-2xl tabular-nums">
-            {pct >= 0 ? "+" : ""}
-            {pct.toFixed(2)}%
+            {ready ? `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%` : "—"}
           </dd>
         </div>
         <div className="col-span-2 sm:col-span-1">
           <dt className={labelClass}>Verdict</dt>
-          <dd className={`font-mono text-sm ${tone}`}>{advice.label}</dd>
+          <dd className={`font-mono text-sm ${ready ? tone : "text-muted"}`}>
+            {advice ? advice.label : "—"}
+          </dd>
         </div>
       </dl>
       <p aria-live="polite" className="text-sm text-muted">
-        {advice.detail}
+        {advice ? advice.detail : "No verdict until both BPM fields hold a number between 40 and 220."}
       </p>
     </div>
   )
 }
 
 export function HalfDouble() {
-  const [bpm, setBpm] = useState(140)
+  const bpm = useNumField(140, 40, 220)
+  const v = bpm.value
   return (
-    <div className="grid gap-4 sm:grid-cols-[12rem_1fr] sm:items-center">
-      <label className="block">
-        <span className={labelClass}>BPM</span>
-        <input
-          type="number"
-          min={40}
-          max={220}
-          step={0.1}
-          value={bpm}
-          onChange={(e) => setBpm(Number(e.target.value))}
-          className={`${field} mt-1`}
-        />
-      </label>
+    <div className="grid gap-4 sm:grid-cols-[12rem_1fr] sm:items-start">
+      <NumField label="BPM" state={bpm} step={0.1} />
       <dl className="grid grid-cols-3 gap-4">
         <div>
           <dt className={labelClass}>Half time</dt>
-          <dd className="font-mono text-2xl tabular-nums">{(bpm / 2).toFixed(1)}</dd>
+          <dd className="font-mono text-2xl tabular-nums">{v === null ? "—" : (v / 2).toFixed(1)}</dd>
         </div>
         <div>
           <dt className={labelClass}>As played</dt>
-          <dd className="font-mono text-2xl tabular-nums text-signal">{bpm.toFixed(1)}</dd>
+          <dd className={`font-mono text-2xl tabular-nums ${v === null ? "text-muted" : "text-signal"}`}>
+            {v === null ? "—" : v.toFixed(1)}
+          </dd>
         </div>
         <div>
           <dt className={labelClass}>Double time</dt>
-          <dd className="font-mono text-2xl tabular-nums">{(bpm * 2).toFixed(1)}</dd>
+          <dd className="font-mono text-2xl tabular-nums">{v === null ? "—" : (v * 2).toFixed(1)}</dd>
         </div>
       </dl>
     </div>

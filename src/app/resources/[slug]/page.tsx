@@ -44,7 +44,7 @@ export default async function ResourcePage({ params }: { params: Promise<{ slug:
     .slice(0, 6)
 
   return (
-    <div className="mx-auto max-w-5xl px-4">
+    <div className="mx-auto max-w-6xl px-4">
       <nav aria-label="Breadcrumb" className="pt-8">
         <Link href="/resources" className="font-mono text-xs uppercase tracking-wider text-muted hover:text-signal">
           ← All resources

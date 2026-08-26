@@ -67,7 +67,7 @@ export function ChainDiagram({ nodes, dense = false }: { nodes: string[]; dense?
         <li key={`${node}-${i}`} className="flex items-center gap-2">
           <span
             className={`border border-line bg-surface-2 font-mono uppercase tracking-wider text-foreground ${
-              dense ? "px-2 py-1 text-[10px]" : "px-3 py-1.5 text-[11px]"
+              dense ? "px-2 py-0.5 text-[11px]" : "px-3 py-1.5 text-[11px]"
             }`}
           >
             {node}

@@ -12,7 +12,7 @@ export default function InspirationPage() {
   const stations = resources.filter((r) => r.categories.includes("radio"))
 
   return (
-    <div className="mx-auto max-w-5xl px-4">
+    <div className="mx-auto max-w-6xl px-4">
       <header className="border-b border-line py-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-signal">Unstick</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Inspiration</h1>

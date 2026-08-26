@@ -49,6 +49,7 @@ typography:
     letterSpacing: "normal"
 rounded:
   none: "0"
+  focus: "2px"
   sm: "4px"
 spacing:
   xs: "6px"

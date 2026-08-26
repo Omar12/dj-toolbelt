@@ -10,10 +10,7 @@ import {
   parseKey,
   type CamelotCode,
 } from "@/lib/camelot"
-
-const field =
-  "w-full border border-line bg-surface-2 px-3 py-2 font-mono text-sm outline-none focus:border-signal/60"
-const labelClass = "font-mono text-[11px] uppercase tracking-[0.2em] text-muted"
+import { field, labelClass } from "./NumField"
 
 const SIZE = 320
 const CENTER = SIZE / 2
@@ -52,7 +49,7 @@ export function CamelotWheel() {
                   r={20}
                   fill={isSelected ? "var(--signal)" : isSafe ? "var(--signal-dim)" : "var(--surface-2)"}
                   stroke={isSelected || isSafe ? "var(--signal)" : "var(--border)"}
-                  className="cursor-pointer"
+                  className="cursor-pointer focus:outline-none focus-visible:stroke-3 focus-visible:stroke-signal"
                   onClick={() => setSelected(k.code)}
                   role="button"
                   tabIndex={0}
@@ -85,11 +82,11 @@ export function CamelotWheel() {
 
       <div>
         <p className={labelClass}>Selected</p>
-        <p className="mt-1 font-mono text-3xl">
+        <p className="mt-1 font-mono text-3xl tabular-nums">
           {selected}{" "}
           <span className="text-base text-muted">{keyByCode.get(selected)?.name}</span>
         </p>
-        <ul className="mt-4 divide-y divide-[var(--border)] border-y border-line">
+        <ul className="mt-4 divide-y divide-line border-y border-line">
           {matches.map((m) => (
             <li key={`${m.code}-${m.relation}`} className="flex items-baseline gap-3 py-2">
               <button
@@ -132,19 +129,19 @@ export function KeyConverter() {
         <dl className="grid grid-cols-2 gap-4 border-t border-line pt-3 sm:grid-cols-4">
           <div>
             <dt className={labelClass}>Camelot</dt>
-            <dd className="font-mono text-2xl text-signal">{key.code}</dd>
+            <dd className="font-mono text-2xl tabular-nums text-signal">{key.code}</dd>
           </div>
           <div>
             <dt className={labelClass}>Musical</dt>
-            <dd className="font-mono text-2xl">{key.name}</dd>
+            <dd className="font-mono text-2xl tabular-nums">{key.name}</dd>
           </div>
           <div>
             <dt className={labelClass}>Open Key</dt>
-            <dd className="font-mono text-2xl">{key.openKey}</dd>
+            <dd className="font-mono text-2xl tabular-nums">{key.openKey}</dd>
           </div>
           <div>
             <dt className={labelClass}>Pitched {semitones >= 0 ? "+" : ""}{semitones}</dt>
-            <dd className="font-mono text-2xl">{shifted ?? "—"}</dd>
+            <dd className="font-mono text-2xl tabular-nums">{shifted ?? "—"}</dd>
           </div>
         </dl>
       ) : (
@@ -159,7 +156,7 @@ export function KeyConverter() {
           step={1}
           value={semitones}
           onChange={(e) => setSemitones(Number(e.target.value))}
-          className="mt-2 w-full accent-[var(--signal)]"
+          className="mt-2 w-full accent-signal"
         />
       </label>
     </div>
@@ -190,14 +187,14 @@ export function KeyCompatibility() {
           <p className="text-sm text-muted">Enter two keys — musical names or Camelot codes.</p>
         ) : match ? (
           <>
-            <p className="font-mono text-2xl text-signal">
+            <p className="font-mono text-2xl tabular-nums text-signal">
               {keyA.code} → {keyB.code} · {match.relation}
             </p>
             <p className="mt-1 text-sm text-muted">{match.note}</p>
           </>
         ) : (
           <>
-            <p className="font-mono text-2xl">
+            <p className="font-mono text-2xl tabular-nums">
               {keyA.code} → {keyB.code} · Clash risk
             </p>
             <p className="mt-1 text-sm text-muted">

@@ -112,7 +112,7 @@ export function ResourceExplorer({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Filter by name…"
-            className="w-full border border-line bg-surface px-3 py-2 text-sm outline-none placeholder:text-muted focus:border-signal/60"
+            className="w-full border border-line bg-surface px-3 py-2 text-sm outline-none placeholder:text-muted focus:border-signal"
           />
         </div>
 
@@ -159,7 +159,7 @@ export function ResourceExplorer({
               setPricing([])
               setFlows([])
             }}
-            className="w-full border border-line px-3 py-2 font-mono text-[11px] uppercase tracking-wider text-muted hover:border-signal/60 hover:text-signal"
+            className="w-full border border-line px-3 py-2 font-mono text-[11px] uppercase tabular-nums tracking-wider text-muted hover:border-signal/60 hover:text-signal"
           >
             Clear {active} filter{active === 1 ? "" : "s"}
           </button>
@@ -167,7 +167,7 @@ export function ResourceExplorer({
       </aside>
 
       <div>
-        <p aria-live="polite" className="mb-3 font-mono text-xs uppercase tracking-wider text-muted">
+        <p aria-live="polite" className="mb-3 font-mono text-xs uppercase tabular-nums tracking-wider text-muted">
           {filtered.length} resource{filtered.length === 1 ? "" : "s"}
         </p>
         <ResourceGrid resources={filtered} />

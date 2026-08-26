@@ -54,7 +54,7 @@ export default function Home() {
 
       <section className="py-10">
         <SectionHeading eyebrow="Work it out now" title="What do I need to work out right now?">
-          <TextLink href="/tools">All nine tools</TextLink>
+          <TextLink href="/tools">All {builtInTools.length} tools</TextLink>
         </SectionHeading>
         <div className="grid gap-3 lg:grid-cols-2">
           {bandTools.map((t) => (
@@ -75,29 +75,27 @@ export default function Home() {
       </section>
 
       <section className="py-10">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {homeActions.map((a) => (
             <Link
-              key={a.title}
+              key={a.verb}
               href={a.href}
-              className="group flex items-start gap-3 border border-line bg-surface p-5 transition-colors hover:border-signal/60 hover:bg-surface-2"
+              className="group flex flex-col border border-line bg-surface p-5 transition-colors hover:border-signal/60 hover:bg-surface-2"
             >
-              <span aria-hidden className="text-xl">
-                {a.emoji}
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition-colors group-hover:text-signal">
+                {a.verb}
               </span>
-              <span>
-                <span className="block text-base font-semibold tracking-tight group-hover:text-signal">
-                  {a.title}
-                </span>
-                <span className="mt-0.5 block text-sm text-muted">{a.detail}</span>
+              <span className="mt-3 block text-base font-semibold leading-snug tracking-tight transition-colors group-hover:text-signal">
+                {a.title}
               </span>
+              <span className="mt-auto block pt-2 text-sm leading-relaxed text-muted">{a.detail}</span>
             </Link>
           ))}
         </div>
       </section>
 
       <section className="py-10">
-        <SectionHeading eyebrow="I need new music" title="Five ways to dig">
+        <SectionHeading eyebrow="I need new music" title="Six ways to dig">
           <TextLink href="/workflows">All workflows</TextLink>
         </SectionHeading>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

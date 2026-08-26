@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function CratesPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4">
+    <div className="mx-auto max-w-6xl px-4">
       <header className="border-b border-line py-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-signal">Prepare</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
