@@ -3,6 +3,8 @@ import assert from "node:assert/strict"
 import { allKeys, compatibleKeys, isCompatible, keyAfterPitch, parseKey } from "../src/lib/camelot.ts"
 import { bpmFromTaps, pitchPercent, transitionAdvice, recordingSizeMb, encodedSizeMb } from "../src/lib/bpm.ts"
 import { numProblem, numValue } from "../src/lib/numfield.ts"
+import { filterTechniques } from "../src/lib/filters.ts"
+import { techniques } from "../src/data/techniques.ts"
 
 // Camelot ↔ musical key mapping anchors.
 assert.equal(parseKey("A minor")?.code, "8A")
@@ -59,3 +61,25 @@ assert.equal(numValue("220", 40, 220), 220)
 assert.match(numProblem("", 40, 220), /Nothing entered/)
 assert.match(numProblem("abc", 40, 220), /Not a number/)
 assert.match(numProblem("999", 40, 220), /Outside 40–220/)
+
+// Transition facets. Ids are the /transitions#anchor targets emitted by the search index.
+assert.equal(techniques.length, 14)
+assert.equal(new Set(techniques.map((t) => t.id)).size, 14)
+assert.equal(filterTechniques(techniques, {}).length, 14)
+
+// A technique tagged "any" survives every selection of that facet.
+assert.ok(filterTechniques(techniques, { bpmDiff: ["same"] }).some((t) => t.id === "hard-cut"))
+assert.ok(
+  filterTechniques(techniques, { genreRelation: ["different"] }).some((t) => t.id === "echo-out"),
+)
+
+// Facets AND together; values within one facet OR.
+assert.deepEqual(
+  filterTechniques(techniques, { category: ["impact"], bpmDiff: ["same"] }).map((t) => t.id),
+  ["double-drop"],
+)
+assert.deepEqual(
+  filterTechniques(techniques, { category: ["impact"] }).map((t) => t.id),
+  ["drop-swap", "double-drop"],
+)
+assert.equal(filterTechniques(techniques, { energy: ["down"] }).some((t) => t.id === "double-drop"), false)

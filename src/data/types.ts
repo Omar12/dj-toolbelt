@@ -80,11 +80,38 @@ export interface Collection {
   resourceIds: string[]
 }
 
+/** How far apart the two tracks' tempos are. "any" matches every selection. */
+export type BpmDiff = "same" | "1-6" | "7+" | "any"
+
+export type EnergyDir = "up" | "flat" | "down"
+
+/** How closely the two tracks' genres sit. "any" matches every selection. */
+export type GenreRelation = "same" | "similar" | "different" | "any"
+
+export type TechniqueCategory =
+  | "blend"
+  | "impact"
+  | "cut"
+  | "fx"
+  | "performative"
+  | "tempo"
+  | "genre-switch"
+
 export interface Technique {
   id: string
   name: string
   description: string
   whenToUse: string
+  /** Situations where this is the wrong tool. */
+  avoid: string
+  /** Concrete worked example with real BPMs/keys. */
+  example: string
+  /** What goes wrong, and why. */
+  risk: string
+  category: TechniqueCategory
+  bpmDiff: BpmDiff
+  energy: EnergyDir[]
+  genreRelation: GenreRelation[]
   difficulty: SkillLevel
   genres: string[]
   walkthrough: string[]

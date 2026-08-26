@@ -59,6 +59,9 @@ export const searchIndex: SearchDoc[] = [
   ...techniques.map((t) =>
     doc("technique", t.id, t.name, t.whenToUse, `/transitions#${t.id}`, [
       t.description,
+      t.category,
+      t.avoid,
+      t.example,
       ...t.genres,
     ]),
   ),

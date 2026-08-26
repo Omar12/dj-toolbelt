@@ -1,4 +1,14 @@
-import type { DJResource, Platform, Pricing, SkillLevel } from "@/data/types"
+import type {
+  BpmDiff,
+  DJResource,
+  EnergyDir,
+  GenreRelation,
+  Platform,
+  Pricing,
+  SkillLevel,
+  Technique,
+  TechniqueCategory,
+} from "@/data/types"
 
 export interface ResourceFilters {
   query?: string
@@ -28,6 +38,27 @@ export function filterResources(all: DJResource[], f: ResourceFilters): DJResour
     if (!has(r.formats, f.formats)) return false
     if (f.pricing?.length && !f.pricing.includes(r.pricing)) return false
     if (f.skill?.length && (!r.skill || !f.skill.includes(r.skill))) return false
+    return true
+  })
+}
+
+export interface TechniqueFilters {
+  bpmDiff?: BpmDiff[]
+  energy?: EnergyDir[]
+  genreRelation?: GenreRelation[]
+  category?: TechniqueCategory[]
+}
+
+/** A technique tagged "any" for a facet is valid in every situation, so it survives any selection. */
+const hasOrAny = (value: string, wanted: string[] | undefined) =>
+  !wanted?.length || value === "any" || wanted.includes(value)
+
+export function filterTechniques(all: Technique[], f: TechniqueFilters): Technique[] {
+  return all.filter((t) => {
+    if (!hasOrAny(t.bpmDiff, f.bpmDiff)) return false
+    if (!has(t.energy, f.energy)) return false
+    if (!t.genreRelation.some((g) => hasOrAny(g, f.genreRelation))) return false
+    if (f.category?.length && !f.category.includes(t.category)) return false
     return true
   })
 }

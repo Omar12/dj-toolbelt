@@ -5,54 +5,10 @@ import type { DJResource, Platform, Pricing } from "@/data/types"
 import { categories } from "@/data/categories"
 import { workflows } from "@/data/workflows"
 import { facetValues, filterResources } from "@/lib/filters"
+import { FacetGroup, toggle } from "./Facets"
 import { ResourceGrid } from "./ResourceCard"
 
 const PRICING: Pricing[] = ["free", "freemium", "paid"]
-
-function toggle<T>(list: T[], value: T): T[] {
-  return list.includes(value) ? list.filter((v) => v !== value) : [...list, value]
-}
-
-function FacetGroup<T extends string>({
-  label,
-  options,
-  selected,
-  onToggle,
-}: {
-  label: string
-  options: T[]
-  selected: T[]
-  onToggle: (value: T) => void
-}) {
-  if (!options.length) return null
-  return (
-    <fieldset className="border-t border-line pt-3">
-      <legend className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-        {label}
-      </legend>
-      <div className="mt-2 flex flex-wrap gap-1.5">
-        {options.map((o) => {
-          const active = selected.includes(o)
-          return (
-            <button
-              key={o}
-              type="button"
-              onClick={() => onToggle(o)}
-              aria-pressed={active}
-              className={`border px-2 py-1 font-mono text-[11px] uppercase tracking-wider transition-colors ${
-                active
-                  ? "border-signal bg-signal-dim/40 text-signal"
-                  : "border-line text-muted hover:border-muted"
-              }`}
-            >
-              {o.replace(/-/g, " ")}
-            </button>
-          )
-        })}
-      </div>
-    </fieldset>
-  )
-}
 
 export function ResourceExplorer({
   resources,
