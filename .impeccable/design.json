@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-26T05:29:40Z",
+  "generatedAt": "2026-08-25T00:00:00.000Z",
   "title": "Design System: DJ Toolbelt",
   "extensions": {
     "colorMeta": {
@@ -8,71 +8,268 @@
         "role": "primary",
         "displayName": "Cue Orange",
         "canonical": "#ff5b2e",
-        "tonalRamp": ["oklch(0.20 0.08 35)", "oklch(0.30 0.12 35)", "oklch(0.40 0.16 35)", "oklch(0.50 0.19 35)", "oklch(0.60 0.20 35)", "oklch(0.68 0.20 35)", "oklch(0.80 0.13 35)", "oklch(0.93 0.05 35)"]
+        "tonalRamp": [
+          "oklch(0.20 0.08 35)",
+          "oklch(0.30 0.12 35)",
+          "oklch(0.40 0.16 35)",
+          "oklch(0.50 0.19 35)",
+          "oklch(0.60 0.20 35)",
+          "oklch(0.68 0.20 35)",
+          "oklch(0.80 0.13 35)",
+          "oklch(0.93 0.05 35)"
+        ]
       },
       "cue-orange-dim": {
         "role": "primary",
         "displayName": "Cue Orange Dim",
         "canonical": "#7a2a16",
-        "tonalRamp": ["oklch(0.18 0.06 35)", "oklch(0.26 0.08 35)", "oklch(0.35 0.10 35)", "oklch(0.44 0.11 35)", "oklch(0.53 0.11 35)", "oklch(0.64 0.10 35)", "oklch(0.78 0.07 35)", "oklch(0.92 0.03 35)"]
+        "tonalRamp": [
+          "oklch(0.18 0.06 35)",
+          "oklch(0.26 0.08 35)",
+          "oklch(0.35 0.10 35)",
+          "oklch(0.44 0.11 35)",
+          "oklch(0.53 0.11 35)",
+          "oklch(0.64 0.10 35)",
+          "oklch(0.78 0.07 35)",
+          "oklch(0.92 0.03 35)"
+        ]
       },
       "ink-black": {
         "role": "neutral",
         "displayName": "Ink Black",
         "canonical": "#08080a",
-        "tonalRamp": ["oklch(0.12 0.004 285)", "oklch(0.18 0.004 285)", "oklch(0.26 0.005 285)", "oklch(0.36 0.006 285)", "oklch(0.48 0.007 285)", "oklch(0.62 0.007 285)", "oklch(0.78 0.005 285)", "oklch(0.95 0.003 285)"]
+        "tonalRamp": [
+          "oklch(0.12 0.004 285)",
+          "oklch(0.18 0.004 285)",
+          "oklch(0.26 0.005 285)",
+          "oklch(0.36 0.006 285)",
+          "oklch(0.48 0.007 285)",
+          "oklch(0.62 0.007 285)",
+          "oklch(0.78 0.005 285)",
+          "oklch(0.95 0.003 285)"
+        ]
       },
       "crate-surface": {
         "role": "neutral",
         "displayName": "Crate Surface",
         "canonical": "#101013",
-        "tonalRamp": ["oklch(0.15 0.004 285)", "oklch(0.21 0.005 285)", "oklch(0.29 0.005 285)", "oklch(0.39 0.006 285)", "oklch(0.50 0.007 285)", "oklch(0.64 0.007 285)", "oklch(0.79 0.005 285)", "oklch(0.95 0.003 285)"]
+        "tonalRamp": [
+          "oklch(0.15 0.004 285)",
+          "oklch(0.21 0.005 285)",
+          "oklch(0.29 0.005 285)",
+          "oklch(0.39 0.006 285)",
+          "oklch(0.50 0.007 285)",
+          "oklch(0.64 0.007 285)",
+          "oklch(0.79 0.005 285)",
+          "oklch(0.95 0.003 285)"
+        ]
       },
       "crate-surface-raised": {
         "role": "neutral",
         "displayName": "Crate Surface Raised",
         "canonical": "#17171c",
-        "tonalRamp": ["oklch(0.17 0.006 285)", "oklch(0.23 0.007 285)", "oklch(0.31 0.008 285)", "oklch(0.41 0.008 285)", "oklch(0.52 0.008 285)", "oklch(0.65 0.007 285)", "oklch(0.80 0.005 285)", "oklch(0.95 0.003 285)"]
+        "tonalRamp": [
+          "oklch(0.17 0.006 285)",
+          "oklch(0.23 0.007 285)",
+          "oklch(0.31 0.008 285)",
+          "oklch(0.41 0.008 285)",
+          "oklch(0.52 0.008 285)",
+          "oklch(0.65 0.007 285)",
+          "oklch(0.80 0.005 285)",
+          "oklch(0.95 0.003 285)"
+        ]
       },
       "hairline": {
         "role": "neutral",
         "displayName": "Hairline",
         "canonical": "#26262d",
-        "tonalRamp": ["oklch(0.16 0.006 285)", "oklch(0.22 0.008 285)", "oklch(0.28 0.009 285)", "oklch(0.38 0.009 285)", "oklch(0.50 0.009 285)", "oklch(0.64 0.008 285)", "oklch(0.79 0.006 285)", "oklch(0.95 0.003 285)"]
+        "tonalRamp": [
+          "oklch(0.16 0.006 285)",
+          "oklch(0.22 0.008 285)",
+          "oklch(0.28 0.009 285)",
+          "oklch(0.38 0.009 285)",
+          "oklch(0.50 0.009 285)",
+          "oklch(0.64 0.008 285)",
+          "oklch(0.79 0.006 285)",
+          "oklch(0.95 0.003 285)"
+        ]
       },
       "dust-grey": {
         "role": "neutral",
         "displayName": "Dust Grey",
         "canonical": "#8b8b96",
-        "tonalRamp": ["oklch(0.18 0.008 285)", "oklch(0.26 0.010 285)", "oklch(0.35 0.012 285)", "oklch(0.45 0.013 285)", "oklch(0.55 0.014 285)", "oklch(0.63 0.014 285)", "oklch(0.79 0.009 285)", "oklch(0.95 0.004 285)"]
+        "tonalRamp": [
+          "oklch(0.18 0.008 285)",
+          "oklch(0.26 0.010 285)",
+          "oklch(0.35 0.012 285)",
+          "oklch(0.45 0.013 285)",
+          "oklch(0.55 0.014 285)",
+          "oklch(0.63 0.014 285)",
+          "oklch(0.79 0.009 285)",
+          "oklch(0.95 0.004 285)"
+        ]
       },
       "sleeve-white": {
         "role": "neutral",
         "displayName": "Sleeve White",
         "canonical": "#ededf0",
-        "tonalRamp": ["oklch(0.20 0.004 285)", "oklch(0.30 0.005 285)", "oklch(0.42 0.005 285)", "oklch(0.54 0.006 285)", "oklch(0.66 0.006 285)", "oklch(0.78 0.005 285)", "oklch(0.87 0.004 285)", "oklch(0.95 0.003 285)"]
+        "tonalRamp": [
+          "oklch(0.20 0.004 285)",
+          "oklch(0.30 0.005 285)",
+          "oklch(0.42 0.005 285)",
+          "oklch(0.54 0.006 285)",
+          "oklch(0.66 0.006 285)",
+          "oklch(0.78 0.005 285)",
+          "oklch(0.87 0.004 285)",
+          "oklch(0.95 0.003 285)"
+        ]
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "One per page: the question the page answers. Max-width 3xl measure." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles inside SectionHeading, always over a hairline rule." },
-      "title": { "displayName": "Title", "purpose": "Card names — resources, workflows, collections, tool shells." },
-      "body": { "displayName": "Body", "purpose": "Descriptions and prose; Dust Grey inside cards, Sleeve White in running text." },
-      "label": { "displayName": "Label / Mono", "purpose": "Eyebrows, chips, field labels, nav, counts, keyboard hints. The connective tissue." },
-      "readout": { "displayName": "Readout", "purpose": "Computed tool values — BPM, selected key. Always tabular-nums." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "One per page: the question the page answers. Max-width 3xl measure."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles inside SectionHeading, always over a hairline rule."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card names — resources, workflows, collections, tool shells."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and prose; Dust Grey inside cards, Sleeve White in running text."
+      },
+      "label": {
+        "displayName": "Label / Mono",
+        "purpose": "Eyebrows, chips, field labels, nav, counts, keyboard hints. The connective tissue."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Computed tool values — BPM, selected key. Always tabular-nums."
+      }
     },
     "shadows": [
-      { "name": "overlay", "value": "0 20px 25px -5px rgba(0,0,0,0.5), 0 8px 10px -6px rgba(0,0,0,0.5)", "purpose": "The only shadow in the system. Floating overlays that leave the document flow — currently just the search results dropdown." }
+      {
+        "name": "overlay",
+        "value": "0 20px 25px -5px rgba(0,0,0,0.5), 0 8px 10px -6px rgba(0,0,0,0.5)",
+        "purpose": "The only shadow in the system. Floating overlays that leave the document flow — currently just the search results dropdown."
+      }
     ],
     "motion": [
-      { "name": "transition-colors", "value": "color 150ms, background-color 150ms, border-color 150ms", "purpose": "The only transition in the system. Hover and focus are colour shifts, never movement." },
-      { "name": "reduced-motion", "value": "animation-duration: 0.01ms; transition-duration: 0.01ms", "purpose": "Global prefers-reduced-motion override in globals.css." }
+      {
+        "name": "transition-colors",
+        "value": "color 150ms, background-color 150ms, border-color 150ms",
+        "purpose": "The only transition in the system. Hover and focus are colour shifts, never movement."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration: 0.01ms; transition-duration: 0.01ms",
+        "purpose": "Global prefers-reduced-motion override in globals.css."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "container", "value": "1152px" }
-    ]
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1152px"
+      }
+    ],
+    "keyHues": {
+      "purpose": "Camelot wheel only. Hue encodes the key number; it is never emphasis and never the sole carrier of meaning.",
+      "formula": "hue = (35 + (n - 8) * 30) mod 360, for Camelot number n in 1..12",
+      "anchor": {
+        "number": 8,
+        "hue": 35,
+        "note": "Key 8 resolves to Cue Orange (#ff5b2e), so the brand colour is a position on the ramp rather than an exception to it."
+      },
+      "axes": {
+        "hue": "key number",
+        "lightness": "ring — major (B) one step brighter than minor (A)",
+        "chroma": "state"
+      },
+      "states": {
+        "rest": {
+          "minor": "oklch(0.21 0.03 H)",
+          "major": "oklch(0.25 0.03 H)",
+          "stroke": "oklch(0.34 0.045 H)",
+          "text": "var(--foreground)"
+        },
+        "compatible": {
+          "minor": "oklch(0.33 0.10 H)",
+          "major": "oklch(0.38 0.10 H)",
+          "stroke": "oklch(0.64 0.16 H)",
+          "text": "var(--foreground)"
+        },
+        "selected": {
+          "fill": "oklch(0.70 0.19 H)",
+          "stroke": "oklch(0.82 0.14 H)",
+          "strokeWidth": 2,
+          "text": "#000"
+        }
+      },
+      "hues": [
+        {
+          "number": 1,
+          "hue": 185
+        },
+        {
+          "number": 2,
+          "hue": 215
+        },
+        {
+          "number": 3,
+          "hue": 245
+        },
+        {
+          "number": 4,
+          "hue": 275
+        },
+        {
+          "number": 5,
+          "hue": 305
+        },
+        {
+          "number": 6,
+          "hue": 335
+        },
+        {
+          "number": 7,
+          "hue": 5
+        },
+        {
+          "number": 8,
+          "hue": 35
+        },
+        {
+          "number": 9,
+          "hue": 65
+        },
+        {
+          "number": 10,
+          "hue": 95
+        },
+        {
+          "number": 11,
+          "hue": 125
+        },
+        {
+          "number": 12,
+          "hue": 155
+        }
+      ],
+      "gamut": "Eight of the twelve selected-state hues exceed sRGB at chroma 0.19. Browser gamut mapping preserves hue and lightness; wide-gamut displays render the full chroma. Do not pre-clamp.",
+      "contrast": "Verified across all 24 keys in all three states: 7.2:1 worst case for #000 on a selected fill, >=7.6:1 for Sleeve White on a compatible fill, >=14.8:1 at rest."
+    }
   },
   "components": [
     {
@@ -162,6 +359,14 @@
       "description": "Mono eyebrow in Cue Orange over a semibold headline, closed by a hairline rule.",
       "html": "<div class=\"ds-heading\"><div><p class=\"ds-eyebrow\">I need new music</p><h2 class=\"ds-headline\">Five ways to dig</h2></div><a class=\"ds-textlink\" href=\"#\">All workflows</a></div>",
       "css": ".ds-heading { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; } .ds-eyebrow { margin: 0; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--signal); } .ds-headline { margin: 4px 0 0; font-size: 30px; font-weight: 600; letter-spacing: -0.025em; color: var(--foreground); } .ds-textlink { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; text-underline-offset: 4px; } .ds-textlink:hover { color: var(--signal); text-decoration: underline; }"
+    },
+    {
+      "name": "Camelot Wheel",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The signature instrument. Hue encodes the key number, lightness the ring, chroma the state — shown here with 8A selected and its four compatible moves lit.",
+      "html": "<svg class=\"ds-camelot\" viewBox=\"0 0 320 320\" role=\"group\" aria-label=\"Camelot wheel\"><circle cx=\"160\" cy=\"160\" r=\"150\" fill=\"none\" stroke=\"var(--border)\"/><circle cx=\"160\" cy=\"160\" r=\"104\" fill=\"none\" stroke=\"var(--border)\"/><g class=\"ds-camelot-key\"><circle cx=\"202.0\" cy=\"87.3\" r=\"20\" fill=\"oklch(0.21 0.03 185)\" stroke=\"oklch(0.34 0.045 185)\" stroke-width=\"1\"/><text x=\"202.0\" y=\"91.3\" text-anchor=\"middle\" fill=\"var(--foreground)\">1A</text></g><g class=\"ds-camelot-key\"><circle cx=\"225.0\" cy=\"47.4\" r=\"20\" fill=\"oklch(0.25 0.03 185)\" stroke=\"oklch(0.34 0.045 185)\" stroke-width=\"1\"/><text x=\"225.0\" y=\"51.4\" text-anchor=\"middle\" fill=\"var(--foreground)\">1B</text></g><g class=\"ds-camelot-key\"><circle cx=\"232.7\" cy=\"118.0\" r=\"20\" fill=\"oklch(0.21 0.03 215)\" stroke=\"oklch(0.34 0.045 215)\" stroke-width=\"1\"/><text x=\"232.7\" y=\"122.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">2A</text></g><g class=\"ds-camelot-key\"><circle cx=\"272.6\" cy=\"95.0\" r=\"20\" fill=\"oklch(0.25 0.03 215)\" stroke=\"oklch(0.34 0.045 215)\" stroke-width=\"1\"/><text x=\"272.6\" y=\"99.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">2B</text></g><g class=\"ds-camelot-key\"><circle cx=\"244.0\" cy=\"160.0\" r=\"20\" fill=\"oklch(0.21 0.03 245)\" stroke=\"oklch(0.34 0.045 245)\" stroke-width=\"1\"/><text x=\"244.0\" y=\"164.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">3A</text></g><g class=\"ds-camelot-key\"><circle cx=\"290.0\" cy=\"160.0\" r=\"20\" fill=\"oklch(0.25 0.03 245)\" stroke=\"oklch(0.34 0.045 245)\" stroke-width=\"1\"/><text x=\"290.0\" y=\"164.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">3B</text></g><g class=\"ds-camelot-key\"><circle cx=\"232.7\" cy=\"202.0\" r=\"20\" fill=\"oklch(0.21 0.03 275)\" stroke=\"oklch(0.34 0.045 275)\" stroke-width=\"1\"/><text x=\"232.7\" y=\"206.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">4A</text></g><g class=\"ds-camelot-key\"><circle cx=\"272.6\" cy=\"225.0\" r=\"20\" fill=\"oklch(0.25 0.03 275)\" stroke=\"oklch(0.34 0.045 275)\" stroke-width=\"1\"/><text x=\"272.6\" y=\"229.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">4B</text></g><g class=\"ds-camelot-key\"><circle cx=\"202.0\" cy=\"232.7\" r=\"20\" fill=\"oklch(0.21 0.03 305)\" stroke=\"oklch(0.34 0.045 305)\" stroke-width=\"1\"/><text x=\"202.0\" y=\"236.7\" text-anchor=\"middle\" fill=\"var(--foreground)\">5A</text></g><g class=\"ds-camelot-key\"><circle cx=\"225.0\" cy=\"272.6\" r=\"20\" fill=\"oklch(0.25 0.03 305)\" stroke=\"oklch(0.34 0.045 305)\" stroke-width=\"1\"/><text x=\"225.0\" y=\"276.6\" text-anchor=\"middle\" fill=\"var(--foreground)\">5B</text></g><g class=\"ds-camelot-key\"><circle cx=\"160.0\" cy=\"244.0\" r=\"20\" fill=\"oklch(0.21 0.03 335)\" stroke=\"oklch(0.34 0.045 335)\" stroke-width=\"1\"/><text x=\"160.0\" y=\"248.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">6A</text></g><g class=\"ds-camelot-key\"><circle cx=\"160.0\" cy=\"290.0\" r=\"20\" fill=\"oklch(0.25 0.03 335)\" stroke=\"oklch(0.34 0.045 335)\" stroke-width=\"1\"/><text x=\"160.0\" y=\"294.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">6B</text></g><g class=\"ds-camelot-key\"><circle cx=\"118.0\" cy=\"232.7\" r=\"20\" fill=\"oklch(0.33 0.1 5)\" stroke=\"oklch(0.64 0.16 5)\" stroke-width=\"1\"/><text x=\"118.0\" y=\"236.7\" text-anchor=\"middle\" fill=\"var(--foreground)\">7A</text></g><g class=\"ds-camelot-key\"><circle cx=\"95.0\" cy=\"272.6\" r=\"20\" fill=\"oklch(0.25 0.03 5)\" stroke=\"oklch(0.34 0.045 5)\" stroke-width=\"1\"/><text x=\"95.0\" y=\"276.6\" text-anchor=\"middle\" fill=\"var(--foreground)\">7B</text></g><g class=\"ds-camelot-key\"><circle cx=\"87.3\" cy=\"202.0\" r=\"20\" fill=\"oklch(0.7 0.19 35)\" stroke=\"oklch(0.82 0.14 35)\" stroke-width=\"2\"/><text x=\"87.3\" y=\"206.0\" text-anchor=\"middle\" fill=\"#000\">8A</text></g><g class=\"ds-camelot-key\"><circle cx=\"47.4\" cy=\"225.0\" r=\"20\" fill=\"oklch(0.38 0.1 35)\" stroke=\"oklch(0.64 0.16 35)\" stroke-width=\"1\"/><text x=\"47.4\" y=\"229.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">8B</text></g><g class=\"ds-camelot-key\"><circle cx=\"76.0\" cy=\"160.0\" r=\"20\" fill=\"oklch(0.33 0.1 65)\" stroke=\"oklch(0.64 0.16 65)\" stroke-width=\"1\"/><text x=\"76.0\" y=\"164.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">9A</text></g><g class=\"ds-camelot-key\"><circle cx=\"30.0\" cy=\"160.0\" r=\"20\" fill=\"oklch(0.25 0.03 65)\" stroke=\"oklch(0.34 0.045 65)\" stroke-width=\"1\"/><text x=\"30.0\" y=\"164.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">9B</text></g><g class=\"ds-camelot-key\"><circle cx=\"87.3\" cy=\"118.0\" r=\"20\" fill=\"oklch(0.21 0.03 95)\" stroke=\"oklch(0.34 0.045 95)\" stroke-width=\"1\"/><text x=\"87.3\" y=\"122.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">10A</text></g><g class=\"ds-camelot-key\"><circle cx=\"47.4\" cy=\"95.0\" r=\"20\" fill=\"oklch(0.25 0.03 95)\" stroke=\"oklch(0.34 0.045 95)\" stroke-width=\"1\"/><text x=\"47.4\" y=\"99.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">10B</text></g><g class=\"ds-camelot-key\"><circle cx=\"118.0\" cy=\"87.3\" r=\"20\" fill=\"oklch(0.21 0.03 125)\" stroke=\"oklch(0.34 0.045 125)\" stroke-width=\"1\"/><text x=\"118.0\" y=\"91.3\" text-anchor=\"middle\" fill=\"var(--foreground)\">11A</text></g><g class=\"ds-camelot-key\"><circle cx=\"95.0\" cy=\"47.4\" r=\"20\" fill=\"oklch(0.25 0.03 125)\" stroke=\"oklch(0.34 0.045 125)\" stroke-width=\"1\"/><text x=\"95.0\" y=\"51.4\" text-anchor=\"middle\" fill=\"var(--foreground)\">11B</text></g><g class=\"ds-camelot-key\"><circle cx=\"160.0\" cy=\"76.0\" r=\"20\" fill=\"oklch(0.21 0.03 155)\" stroke=\"oklch(0.34 0.045 155)\" stroke-width=\"1\"/><text x=\"160.0\" y=\"80.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">12A</text></g><g class=\"ds-camelot-key\"><circle cx=\"160.0\" cy=\"30.0\" r=\"20\" fill=\"oklch(0.25 0.03 155)\" stroke=\"oklch(0.34 0.045 155)\" stroke-width=\"1\"/><text x=\"160.0\" y=\"34.0\" text-anchor=\"middle\" fill=\"var(--foreground)\">12B</text></g></svg>",
+      "css": ".ds-camelot { width: 320px; max-width: 100%; height: auto; display: block; } .ds-camelot text { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; pointer-events: none; } .ds-camelot-key circle { cursor: pointer; transition: fill 0.15s, stroke 0.15s; } .ds-camelot-key:hover circle { stroke-width: 3; } .ds-camelot-key:focus-visible circle { outline: 2px solid var(--signal); outline-offset: 2px; }"
     }
   ],
   "narrative": {
@@ -175,33 +380,75 @@
       "One accent colour, used sparingly enough that it always means something."
     ],
     "rules": [
-      { "name": "The One Sticker Rule", "body": "Cue Orange covers well under 10% of any screen. If two things on a screen are orange for two different reasons, one of them is wrong.", "section": "colors" },
-      { "name": "The Hairline Rule", "body": "Separation is a 1px #26262d border or a tonal step — never a shadow, never a gradient, never a coloured divider.", "section": "colors" },
-      { "name": "The Black Text Exception", "body": "Text on a solid Cue Orange fill is pure black (#000), not Sleeve White. This appears only on button hover and the selected Camelot key.", "section": "colors" },
-      { "name": "The Mono Means Machine Rule", "body": "If it is a number, a tag, a key code, a control label, or a piece of navigation, it is Geist Mono, uppercase, wide-tracked. If it is a sentence, it is Geist Sans, sentence case. Nothing is both.", "section": "typography" },
-      { "name": "The Tabular Rule", "body": "Any number that changes in place — BPM, intervals, tap counts, durations, storage — carries tabular-nums so digits do not dance while the value updates.", "section": "typography" },
-      { "name": "The Gutter Constant Rule", "body": "Horizontal padding is always 16px and the column never exceeds 1152px. Wide screens get more whitespace, never a wider measure.", "section": "layout" },
-      { "name": "The No Shadow Rule", "body": "Surfaces never lift. If something needs to feel separate, move it a tonal step or give it a hairline. Shadows are permitted only on elements that overlay the page (dropdowns, popovers) — never on cards, buttons, headers or inputs.", "section": "elevation" },
-      { "name": "The Hover Is Colour, Not Height Rule", "body": "Hover changes border colour, text colour, or background tone. It never translates, scales, or casts.", "section": "elevation" },
-      { "name": "The Square Default Rule", "body": "New components ship with zero radius. Reaching for a radius above 4px means the component belongs to a different system.", "section": "shapes" }
+      {
+        "name": "The One Sticker Rule",
+        "body": "Cue Orange covers well under 10% of any screen. If two things on a screen are orange for two different reasons, one of them is wrong. The Camelot wheel is the one exemption, and it is exempt because hue there is data, not emphasis — see The Key Hue Rule.",
+        "section": "colors"
+      },
+      {
+        "name": "The Key Hue Rule",
+        "body": "Chromatic hue outside Cue Orange exists in exactly one place: the Camelot wheel, where it encodes the key number. The mapping is fixed — `hue = 35° + (n − 8) × 30°` — so the twelve wheel positions become twelve evenly spaced hues and key 8 lands on Cue Orange. Three axes carry three meanings and nothing else: hue is the number, lightness is the ring (major sits one step brighter than minor), chroma is the state (`0.03` at rest, `0.10` compatible, `0.19` selected). Hue is always redundant with the printed Camelot code, never the sole carrier of meaning. A second surface wanting key colour extends this mapping; it does not invent one.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Separation is a 1px `#26262d` border or a tonal step — never a shadow, never a gradient, never a coloured divider.",
+        "section": "colors"
+      },
+      {
+        "name": "The Black Text Exception",
+        "body": "Text on any fully lit chromatic fill is pure black (`#000`), not Sleeve White. This appears only on button hover and on the selected Camelot key, whichever hue that key carries.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Means Machine Rule",
+        "body": "If it is a number, a tag, a key code, a control label, or a piece of navigation, it is Geist Mono, uppercase, wide-tracked. If it is a sentence, it is Geist Sans, sentence case. Nothing is both.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Any number that changes in place — BPM, intervals, tap counts, durations, storage — carries `tabular-nums` so digits do not dance while the value updates.",
+        "section": "typography"
+      },
+      {
+        "name": "The Gutter Constant Rule",
+        "body": "Horizontal padding is always 16px and the column never exceeds 1152px. Wide screens get more whitespace, never a wider measure.",
+        "section": "layout"
+      },
+      {
+        "name": "The No Shadow Rule",
+        "body": "Surfaces never lift. If something needs to feel separate, move it a tonal step or give it a hairline. Shadows are permitted only on elements that overlay the page (dropdowns, popovers) — never on cards, buttons, headers or inputs.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hover Is Colour, Not Height Rule",
+        "body": "Hover changes border colour, text colour, or background tone. It never translates, scales, or casts.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Default Rule",
+        "body": "New components ship with zero radius. Reaching for a radius above 4px means the component belongs to a different system.",
+        "section": "shapes"
+      }
     ],
     "dos": [
-      "Do build new surfaces from the three-tone stack — #08080a ground, #101013 panel, #17171c inset — plus 1px #26262d hairlines.",
-      "Do set every number, tag, control label and nav item in Geist Mono, uppercase, tracking-[0.2em] at 11px.",
-      "Do give changing numeric readouts tabular-nums.",
-      "Do express hover as a colour shift on border or text, with transition-colors.",
-      "Do use the wrapper-border focus shift on inputs and rely on the global 2px Cue Orange :focus-visible outline elsewhere — never remove a focus indicator.",
-      "Do keep the column at max-w-6xl with 16px gutters and 40px section rhythm.",
-      "Do pair a mono eyebrow with every section headline when the section answers a question."
+      "Do build new surfaces from the three-tone stack — `#08080a` ground, `#101013` panel, `#17171c` inset — plus 1px `#26262d` hairlines.",
+      "Do set every number, tag, control label and nav item in Geist Mono, uppercase, `tracking-[0.2em]` at 11px.",
+      "Do give changing numeric readouts `tabular-nums`.",
+      "Do express hover as a colour shift on border or text, with `transition-colors`.",
+      "Do use the wrapper-border focus shift on inputs and rely on the global 2px Cue Orange `:focus-visible` outline elsewhere — never remove a focus indicator.",
+      "Do keep the column at `max-w-6xl` with 16px gutters and 40px section rhythm.",
+      "Do pair a mono eyebrow with every section headline when the section answers a question.",
+      "Do derive key colour from The Key Hue Rule's mapping when a surface needs it, and keep the Camelot code visible so hue stays redundant."
     ],
     "donts": [
-      "Don't add a light theme, a theme toggle, or any surface lighter than #17171c.",
+      "Don't add a light theme, a theme toggle, or any surface lighter than `#17171c`.",
       "Don't cast a shadow on a card, button, header or input; only true overlays may have one.",
       "Don't use a corner radius above 4px, and default to 0.",
-      "Don't introduce a second accent colour, a gradient, or a status palette of greens and reds — severity is already carried by Cue Orange / Sleeve White / Dust Grey.",
+      "Don't introduce a second accent colour, a gradient, or a status palette of greens and reds — severity is already carried by Cue Orange / Sleeve White / Dust Grey. Chromatic hue is licensed only where it encodes data, and today that is the Camelot wheel alone.",
       "Don't let Cue Orange exceed roughly 10% of a screen or appear twice for two different meanings.",
       "Don't drift toward SaaS-dashboard chrome, neon EDM gradients, skeuomorphic gear textures, or vinyl-nostalgia kitsch.",
-      "Don't animate beyond colour transitions; prefers-reduced-motion is honoured globally and there is nothing decorative to reduce."
+      "Don't animate beyond colour transitions; `prefers-reduced-motion` is honoured globally and there is nothing decorative to reduce."
     ]
   }
 }

@@ -21,6 +21,34 @@ function position(number: number, radius: number) {
   return { x: CENTER + radius * Math.sin(angle), y: CENTER - radius * Math.cos(angle) }
 }
 
+// The wheel is already a circle of twelve, so the number reads as a hue: one
+// 30 degree step per position, anchored so 8 lands on Cue Orange and the wheel
+// stays this product's colour rather than a rainbow.
+const hueOf = (number: number) => (35 + (number - 8) * 30 + 360) % 360
+
+// Hue carries the number, lightness carries the ring, chroma carries the state:
+// at rest the wheel is a dusty near-monochrome, and only the selected key and
+// its compatible moves come up to full colour.
+function nodeInk(number: number, letter: "A" | "B", state: "selected" | "safe" | "rest") {
+  const h = hueOf(number)
+  const major = letter === "B"
+  if (state === "selected") {
+    return { fill: `oklch(0.7 0.19 ${h})`, stroke: `oklch(0.82 0.14 ${h})`, text: "#000" }
+  }
+  if (state === "safe") {
+    return {
+      fill: `oklch(${major ? 0.38 : 0.33} 0.1 ${h})`,
+      stroke: `oklch(0.64 0.16 ${h})`,
+      text: "var(--foreground)",
+    }
+  }
+  return {
+    fill: `oklch(${major ? 0.25 : 0.21} 0.03 ${h})`,
+    stroke: `oklch(0.34 0.045 ${h})`,
+    text: "var(--foreground)",
+  }
+}
+
 export function CamelotWheel() {
   const [selected, setSelected] = useState<CamelotCode>("8A")
   const matches = useMemo(() => compatibleKeys(selected), [selected])
@@ -41,15 +69,17 @@ export function CamelotWheel() {
             const { x, y } = position(k.number, k.letter === "B" ? 130 : 84)
             const isSelected = k.code === selected
             const isSafe = safe.has(k.code)
+            const ink = nodeInk(k.number, k.letter, isSelected ? "selected" : isSafe ? "safe" : "rest")
             return (
               <g key={k.code}>
                 <circle
                   cx={x}
                   cy={y}
                   r={20}
-                  fill={isSelected ? "var(--signal)" : isSafe ? "var(--signal-dim)" : "var(--surface-2)"}
-                  stroke={isSelected || isSafe ? "var(--signal)" : "var(--border)"}
-                  className="cursor-pointer focus:outline-none focus-visible:stroke-3 focus-visible:stroke-signal"
+                  fill={ink.fill}
+                  stroke={ink.stroke}
+                  strokeWidth={isSelected ? 2 : 1}
+                  className="cursor-pointer transition-[fill,stroke] hover:[stroke-width:3] focus:outline-none focus-visible:stroke-3 focus-visible:stroke-signal"
                   onClick={() => setSelected(k.code)}
                   role="button"
                   tabIndex={0}
@@ -67,7 +97,7 @@ export function CamelotWheel() {
                   y={y + 4}
                   textAnchor="middle"
                   className="pointer-events-none font-mono text-[11px]"
-                  fill={isSelected ? "#000" : "var(--foreground)"}
+                  fill={ink.text}
                 >
                   {k.code}
                 </text>
@@ -76,7 +106,8 @@ export function CamelotWheel() {
           })}
         </svg>
         <p className="mt-2 text-xs text-muted">
-          Outer ring: major (B). Inner ring: minor (A). Click or tab to a key.
+          Outer ring: major (B). Inner ring: minor (A). Colour tracks the number, so
+          neighbours on the wheel are neighbours in hue. Click or tab to a key.
         </p>
       </div>
 

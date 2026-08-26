@@ -122,8 +122,8 @@ Controls feel tactile and confident: square corners, firm borders, states that s
 A near-black room with four greys of separation and exactly one chromatic voice.
 
 ### Primary
-- **Cue Orange** (`#ff5b2e`): named after the cue button on every DJ mixer. Marks what is live, selected, free, featured, or actionable — eyebrow labels, selected filter chips, the selected Camelot key, external-link and tap-target buttons, hover on links and headings, and the focus ring. Never used as a background wash, never as decoration.
-- **Cue Orange Dim** (`#7a2a16`): the accent held at rest. Used at 30–40% alpha as the fill behind accent buttons and selected chips, and as the "harmonically safe" fill on the Camelot wheel, so orange can indicate without shouting.
+- **Cue Orange** (`#ff5b2e`): named after the cue button on every DJ mixer. Marks what is live, selected, free, featured, or actionable — eyebrow labels, selected filter chips, external-link and tap-target buttons, hover on links and headings, and the focus ring. Never used as a background wash, never as decoration. On the Camelot wheel it is not an override but a position: the wheel's hue ramp is anchored so key 8 resolves to this colour, which is why the wheel reads as this product rather than a spectrum.
+- **Cue Orange Dim** (`#7a2a16`): the accent held at rest. Used at 30–40% alpha as the fill behind accent buttons and selected chips, so orange can indicate without shouting. Its lightness and chroma (`oklch(0.36 0.11 …)`) are also the template for the Camelot wheel's compatible-key tier, applied at each key's own hue rather than at orange.
 
 ### Neutral
 - **Ink Black** (`#08080a`): the page ground. The room itself; everything else is placed on it.
@@ -134,11 +134,13 @@ A near-black room with four greys of separation and exactly one chromatic voice.
 - **Dust Grey** (`#8b8b96`): descriptions, secondary readouts, nav links at rest, counts, and placeholder text. Roughly half the text on any screen.
 
 ### Named Rules
-**The One Sticker Rule.** Cue Orange covers well under 10% of any screen. If two things on a screen are orange for two different reasons, one of them is wrong.
+**The One Sticker Rule.** Cue Orange covers well under 10% of any screen. If two things on a screen are orange for two different reasons, one of them is wrong. The Camelot wheel is the one exemption, and it is exempt because hue there is data, not emphasis — see The Key Hue Rule.
+
+**The Key Hue Rule.** Chromatic hue outside Cue Orange exists in exactly one place: the Camelot wheel, where it encodes the key number. The mapping is fixed — `hue = 35° + (n − 8) × 30°` — so the twelve wheel positions become twelve evenly spaced hues and key 8 lands on Cue Orange. Three axes carry three meanings and nothing else: hue is the number, lightness is the ring (major sits one step brighter than minor), chroma is the state (`0.03` at rest, `0.10` compatible, `0.19` selected). Hue is always redundant with the printed Camelot code, never the sole carrier of meaning. A second surface wanting key colour extends this mapping; it does not invent one.
 
 **The Hairline Rule.** Separation is a 1px `#26262d` border or a tonal step — never a shadow, never a gradient, never a coloured divider.
 
-**The Black Text Exception.** Text on a solid Cue Orange fill is pure black (`#000`), not Sleeve White. This appears only on button hover and the selected Camelot key.
+**The Black Text Exception.** Text on any fully lit chromatic fill is pure black (`#000`), not Sleeve White. This appears only on button hover and on the selected Camelot key, whichever hue that key carries.
 
 ## Typography
 
@@ -222,7 +224,15 @@ Borders carry the form language. Every container is defined by a 1px hairline, a
 - **Footer:** hairline top rule, a plain-language description of what the product is, and a mono uppercase link row hovering to Cue Orange.
 
 ### Camelot Wheel (signature component)
-Two concentric rings drawn in SVG on hairline circles: major keys (B) at r=130, minor (A) at r=84, 12 at the top and running clockwise like a clock face. Each key is a 20px circle — selected is solid Cue Orange with black mono text, harmonically safe neighbours are Cue Orange Dim with an orange stroke, everything else is Crate Surface Raised with a hairline. Every node is a keyboard-reachable `role="button"` with `aria-pressed`. It is the clearest statement of the system: data as instrument, colour only where it carries meaning.
+Two concentric rings drawn in SVG on hairline circles: major keys (B) at r=130, minor (A) at r=84, 12 at the top and running clockwise like a clock face. Each key is a 20px circle whose colour is computed, not assigned — hue from the key number per The Key Hue Rule, lightness from the ring, chroma from the state:
+
+- **Rest:** `oklch(0.21 0.03 H)` minor / `oklch(0.25 0.03 H)` major, stroke `oklch(0.34 0.045 H)`, Sleeve White label. Twenty-four barely-tinted darks that read as a dusty spectrum at low volume, not a rainbow.
+- **Compatible** (the four safe moves): `oklch(0.33 0.10 H)` minor / `oklch(0.38 0.10 H)` major, stroke `oklch(0.64 0.16 H)`, Sleeve White label.
+- **Selected:** `oklch(0.70 0.19 H)` with a `oklch(0.82 0.14 H)` stroke at 2px and a black mono label.
+
+Selecting a key lights it and its four compatible neighbours and leaves the other nineteen dark, so the answer to "what mixes with this" is the only lit thing on the ring. Hover thickens the stroke to 3px — form, not colour, because every node already owns a colour. Fills and strokes carry `transition-[fill,stroke]`; nothing moves. Every node is a keyboard-reachable `role="button"` with `aria-pressed`, and the Camelot code sits on every circle so hue is never the only code. Eight of the twelve selected hues exceed sRGB at that chroma; browser gamut mapping handles them, preserving hue and lightness, and wide-gamut displays get the full colour. Contrast holds across all twenty-four keys in every state: `7.2:1` worst case for the black label on a selected fill, `≥7.6:1` for Sleeve White on a compatible fill.
+
+It is the clearest statement of the system: data as instrument, colour only where it carries meaning.
 
 ### Chain Diagram (signature component)
 A wrapping ordered list of mono uppercase nodes on Crate Surface Raised separated by a Cue Orange `›`. It renders a workflow as a signal path (`TRACK › LABEL › DJ`) and is the one place the product's sequencing idea becomes a picture.
@@ -237,12 +247,13 @@ A wrapping ordered list of mono uppercase nodes on Crate Surface Raised separate
 - **Do** use the wrapper-border focus shift on inputs and rely on the global 2px Cue Orange `:focus-visible` outline elsewhere — never remove a focus indicator.
 - **Do** keep the column at `max-w-6xl` with 16px gutters and 40px section rhythm.
 - **Do** pair a mono eyebrow with every section headline when the section answers a question.
+- **Do** derive key colour from The Key Hue Rule's mapping when a surface needs it, and keep the Camelot code visible so hue stays redundant.
 
 ### Don't:
 - **Don't** add a light theme, a theme toggle, or any surface lighter than `#17171c`.
 - **Don't** cast a shadow on a card, button, header or input; only true overlays may have one.
 - **Don't** use a corner radius above 4px, and default to 0.
-- **Don't** introduce a second accent colour, a gradient, or a status palette of greens and reds — severity is already carried by Cue Orange / Sleeve White / Dust Grey.
+- **Don't** introduce a second accent colour, a gradient, or a status palette of greens and reds — severity is already carried by Cue Orange / Sleeve White / Dust Grey. Chromatic hue is licensed only where it encodes data, and today that is the Camelot wheel alone.
 - **Don't** let Cue Orange exceed roughly 10% of a screen or appear twice for two different meanings.
 - **Don't** drift toward SaaS-dashboard chrome, neon EDM gradients, skeuomorphic gear textures, or vinyl-nostalgia kitsch.
 - **Don't** animate beyond colour transitions; `prefers-reduced-motion` is honoured globally and there is nothing decorative to reduce.
