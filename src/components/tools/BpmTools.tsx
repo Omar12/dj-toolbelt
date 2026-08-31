@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useCallback, useState } from "react"
 import { bpmFromTaps, pitchPercent, transitionAdvice } from "@/lib/bpm"
 import { allValid, labelClass, NumField, useNumField } from "./NumField"
@@ -116,6 +117,15 @@ export function BpmTransition() {
       </dl>
       <p aria-live="polite" className="text-sm text-muted">
         {advice ? advice.detail : "No verdict until both BPM fields hold a number between 40 and 220."}
+{" "}
+        {advice ? (
+          <Link
+            href={advice.href}
+            className="font-mono text-[11px] uppercase tracking-wider text-signal underline underline-offset-4 hover:text-foreground"
+          >
+            Transitions for this →
+          </Link>
+        ) : null}
       </p>
     </div>
   )

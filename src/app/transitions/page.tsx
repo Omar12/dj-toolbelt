@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { techniques } from "@/data/techniques"
 import { TransitionExplorer } from "@/components/TransitionExplorer"
 
@@ -22,7 +23,9 @@ export default function TransitionsPage() {
       </header>
 
       <div className="py-10">
-        <TransitionExplorer techniques={techniques} />
+        <Suspense fallback={null}>
+          <TransitionExplorer techniques={techniques} />
+        </Suspense>
       </div>
     </div>
   )

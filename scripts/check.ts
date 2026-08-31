@@ -38,6 +38,16 @@ assert.equal(transitionAdvice(70, 140).label, "Half/double time")
 assert.equal(transitionAdvice(90, 174).label, "Half/double time") // 180 is within pitch range of 174
 assert.equal(transitionAdvice(100, 174).severity, "hard")
 
+// Every verdict deep-links to filters that actually match at least one technique.
+for (const [a, b] of [[124, 126], [124, 131], [70, 140], [100, 174]]) {
+  const q = new URLSearchParams(transitionAdvice(a, b).href.split("?")[1])
+  const hits = filterTechniques(techniques, {
+    bpmDiff: q.getAll("bpm") as never,
+    category: q.getAll("category") as never,
+  })
+  assert.ok(hits.length > 0, `no techniques for ${a}->${b} verdict link`)
+}
+
 const taps = [0, 500, 1000, 1500]
 assert.equal(Math.round(bpmFromTaps(taps).bpm), 120)
 assert.equal(bpmFromTaps([]).bpm, 0)

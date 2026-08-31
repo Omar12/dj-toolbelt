@@ -1,5 +1,6 @@
 "use client"
 
+import { useSearchParams } from "next/navigation"
 import { useMemo, useState } from "react"
 import type {
   BpmDiff,
@@ -44,11 +45,23 @@ function Note({ label, children }: { label: string; children: string }) {
   )
 }
 
+/** Preselect facets from the URL, e.g. /transitions?bpm=7%2B&category=cut — unknown values ignored. */
+function fromQuery<T extends string>(
+  params: { getAll(key: string): string[] },
+  key: string,
+  allowed: readonly T[],
+): T[] {
+  return params.getAll(key).filter((v): v is T => (allowed as readonly string[]).includes(v))
+}
+
 export function TransitionExplorer({ techniques }: { techniques: Technique[] }) {
-  const [bpm, setBpm] = useState<BpmDiff[]>([])
+  const params = useSearchParams()
+  const [bpm, setBpm] = useState<BpmDiff[]>(() => fromQuery(params, "bpm", BPM))
   const [energy, setEnergy] = useState<EnergyDir[]>([])
   const [relation, setRelation] = useState<GenreRelation[]>([])
-  const [category, setCategory] = useState<TechniqueCategory[]>([])
+  const [category, setCategory] = useState<TechniqueCategory[]>(() =>
+    fromQuery(params, "category", CATEGORY),
+  )
 
   const filtered = useMemo(
     () => filterTechniques(techniques, { bpmDiff: bpm, energy, genreRelation: relation, category }),

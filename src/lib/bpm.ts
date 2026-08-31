@@ -8,6 +8,8 @@ export interface TransitionAdvice {
   label: string
   detail: string
   severity: "easy" | "workable" | "hard"
+  /** Transition Toolkit filters that match this verdict. */
+  href: string
 }
 
 export function transitionAdvice(from: number, to: number): TransitionAdvice {
@@ -18,12 +20,12 @@ export function transitionAdvice(from: number, to: number): TransitionAdvice {
     Math.abs(pitchPercent(from / 2, to)),
   )
   if (pct <= 3)
-    return { label: "Straight blend", detail: "Within pitch-fader range. Beatmatch and blend normally.", severity: "easy" }
+    return { label: "Straight blend", detail: "Within pitch-fader range. Beatmatch and blend normally.", severity: "easy", href: "/transitions?bpm=same&bpm=1-6&category=blend&category=impact" }
   if (pct <= 6)
-    return { label: "Blend with care", detail: "Noticeable pitch shift. Move the tempo gradually across a phrase.", severity: "workable" }
+    return { label: "Blend with care", detail: "Noticeable pitch shift. Move the tempo gradually across a phrase.", severity: "workable", href: "/transitions?bpm=1-6&category=blend&category=fx" }
   if (halfDouble <= 6)
-    return { label: "Half/double time", detail: "Treat one track at half or double tempo — the pulse still lines up.", severity: "workable" }
-  return { label: "Cut, do not blend", detail: "Too far apart to blend. Use an echo out, a drop swap or a tool track.", severity: "hard" }
+    return { label: "Half/double time", detail: "Treat one track at half or double tempo — the pulse still lines up.", severity: "workable", href: "/transitions?bpm=7%2B&category=tempo" }
+  return { label: "Cut, do not blend", detail: "Too far apart to blend. Use an echo out, a drop swap or a tool track.", severity: "hard", href: "/transitions?bpm=7%2B&category=cut" }
 }
 
 export function bpmFromTaps(timestamps: number[]): { bpm: number; interval: number; taps: number } {
