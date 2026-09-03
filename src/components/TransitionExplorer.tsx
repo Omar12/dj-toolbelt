@@ -166,6 +166,26 @@ export function TransitionExplorer({ techniques }: { techniques: Technique[] }) 
                 <div className="mt-3 border-t border-line pt-3">
                   <Note label="Example">{t.example}</Note>
                   <Note label="Risk">{t.risk}</Note>
+                  {t.videos?.length ? (
+                    <p className="mt-3 text-sm">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                        Watch{" "}
+                      </span>
+                      {t.videos.map((v, i) => (
+                        <span key={v.id}>
+                          {i > 0 && <span className="text-muted"> · </span>}
+                          <a
+                            href={`https://www.youtube.com/watch?v=${v.id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-signal underline underline-offset-2"
+                          >
+                            {v.channel}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             ))}
