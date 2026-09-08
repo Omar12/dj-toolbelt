@@ -12,7 +12,7 @@ export default function ToolbeltPage() {
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-signal">Saved</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">My Toolbelt</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted">
-          Favourites live in this browser’s local storage. No account, no sync — clearing site data
+          Favorites live in this browser’s local storage. No account, no sync — clearing site data
           clears them.
         </p>
       </header>

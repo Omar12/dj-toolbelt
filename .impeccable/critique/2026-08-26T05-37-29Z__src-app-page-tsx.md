@@ -2,7 +2,7 @@
 target: critique (whole app, anchored on src/app/page.tsx)
 total_score: 27
 max_score: 40
-na_heuristics: 
+na_heuristics:
 p0_count: 1
 p1_count: 4
 timestamp: 2026-08-26T05-37-29Z
@@ -115,7 +115,7 @@ The single biggest opportunity: **the front page is a map when it should be an i
 - The homepage cannot answer their question: ten browse-tiles, zero calculators (`page.tsx:41-59`). Reaching the Camelot wheel means finding the 7th item in a horizontally-scrolling `text-xs` mono strip — one-handed, in a dark booth.
 - The header eats the viewport: on narrow screens the search bar drops to its own full-width row (`SiteHeader.tsx:15`, `order-3`) *plus* the nav row, roughly 140px of sticky chrome on a 667px phone before any content.
 - Their work evaporates. Every tool is `useState`-only (`BpmTools.tsx:31,82,146`; `PlanningTools.tsx:11-13,61-63,125-126`). A reload or an app-switch wipes the tempo they just tapped, and `/tools#bpm-transition` restores the anchor, never the numbers.
-- The tap pad is right (a `py-10` slab, `BpmTools.tsx:50`); the favourite star is wrong (~26px inside a card-wide link overlay).
+- The tap pad is right (a `py-10` slab, `BpmTools.tsx:50`); the favorite star is wrong (~26px inside a card-wide link overlay).
 - The BPM verdict lies on an empty field — the worst possible failure for this persona, because they act on it live.
 
 **Keyboard-only / screen-reader user**
@@ -131,7 +131,7 @@ The single biggest opportunity: **the front page is a map when it should be an i
 
 **The author on their third visit** (the actual primary user)
 - No path back to the tool or filter used last — no recents, no persistence, no URL state.
-- My Toolbelt is a flat favourites list with no ordering, notes, or grouping (`MyToolbelt.tsx:26` renders a plain `ResourceGrid`) — after 20 saves it is the same undifferentiated wall the explorer was.
+- My Toolbelt is a flat favorites list with no ordering, notes, or grouping (`MyToolbelt.tsx:26` renders a plain `ResourceGrid`) — after 20 saves it is the same undifferentiated wall the explorer was.
 - Crates, Inspiration and the Transition Toolkit are unreachable from the homepage and absent from primary nav; they surface only via the `extras` map on two section pages and the footer.
 
 ## Cognitive Load: 5 of 8 fail — high, critical
@@ -169,4 +169,4 @@ Decision points above the ≤4 budget: `page.tsx:41-59` (10 action cards), `page
 3. `/resources` with 82 items and 50 filters is a directory — the exact thing the hero copy says this is not. Is the explorer a feature, or an admission that the "filed by job" thesis doesn't reach far enough?
 4. The system forbids a second accent because severity is carried by Orange / White / Grey — and `transitionAdvice` uses that ladder (`BpmTools.tsx:86-91`). So why does "Cut, do not blend," the most consequential verdict the product issues, render in the *quietest* colour in the system?
 5. Ten emoji on the front door, in a system whose north star is "nothing here performs." Which one is actually true?
-6. Favourites are a starred bag. The product's whole idea is sequence. What would My Toolbelt be if it were an ordered chain — a personal workflow — instead of a list?
+6. Favorites are a starred bag. The product's whole idea is sequence. What would My Toolbelt be if it were an ordered chain — a personal workflow — instead of a list?
