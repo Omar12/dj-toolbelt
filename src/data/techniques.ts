@@ -28,8 +28,8 @@ export const techniques: Technique[] = [
       "Roll off A's remaining mids and highs over the next 16–32 bars, then close the fader.",
     ],
     videos: [
-      { id: "C-5qFyU9QNU", title: "2 DJ Transition Styles and When to Swap Your Basses", channel: "Club Ready DJ School" },
-      { id: "Dmb5GmLkbrY", title: "Bass Swap EQ Mixing Technique | Mix & Tricks #4 with XDJ-RX3", channel: "AlphaTheta / Pioneer DJ USA" },
+      { id: "C-5qFyU9QNU", channel: "Club Ready DJ School" },
+      { id: "Dmb5GmLkbrY", channel: "AlphaTheta / Pioneer DJ USA" },
     ],
   },
   {
@@ -55,8 +55,8 @@ export const techniques: Technique[] = [
       "Clean up the outgoing mids over the following bars.",
     ],
     videos: [
-      { id: "Dmb5GmLkbrY", title: "Bass Swap EQ Mixing Technique | Mix & Tricks #4 with XDJ-RX3", channel: "AlphaTheta / Pioneer DJ USA" },
-      { id: "C-5qFyU9QNU", title: "2 DJ Transition Styles and When to Swap Your Basses", channel: "Club Ready DJ School" },
+      { id: "Dmb5GmLkbrY", channel: "AlphaTheta / Pioneer DJ USA" },
+      { id: "C-5qFyU9QNU", channel: "Club Ready DJ School" },
     ],
   },
   {
@@ -85,8 +85,8 @@ export const techniques: Technique[] = [
       "Cut or fade the outgoing track immediately — do not let two drops coexist.",
     ],
     videos: [
-      { id: "xfZOWflKYWc", title: "DROP MIXING DJ LESSON | DROP SWAP FOR BEGINNERS", channel: "DJ Phil Harris" },
-      { id: "tBNoYplBAZ0", title: "5 Tips for Drop Swapping Mash Ups!", channel: "Club Ready DJ School" },
+      { id: "xfZOWflKYWc", channel: "DJ Phil Harris" },
+      { id: "tBNoYplBAZ0", channel: "Club Ready DJ School" },
     ],
   },
   {
@@ -115,8 +115,8 @@ export const techniques: Technique[] = [
       "Decide in advance which track you phase out, usually within 32 bars.",
     ],
     videos: [
-      { id: "NsXOw75GY7M", title: "How To Double Drop - Drum & Bass DJ Tutorial", channel: "Crossfader" },
-      { id: "-JrqutJBL_A", title: "3 Ways To Mix Drum & Bass ('Double Drop' Tutorial)", channel: "Crossfader" },
+      { id: "NsXOw75GY7M", channel: "Crossfader" },
+      { id: "-JrqutJBL_A", channel: "Crossfader" },
     ],
   },
   {
@@ -142,8 +142,8 @@ export const techniques: Technique[] = [
       "Commit. Hesitation is what makes it sound like an accident.",
     ],
     videos: [
-      { id: "8IMgR0-ARDg", title: "How To Dropmix Like A Pro Hip Hop DJ", channel: "Digital DJ Tips" },
-      { id: "424Iq6rkWhg", title: "ADVANCED DJ MIXING TUTORIAL ON CUTTING TUNES IN TO THE MIX BY ELLASKINS THE DJ TUTOR", channel: "ellaskins" },
+      { id: "8IMgR0-ARDg", channel: "Digital DJ Tips" },
+      { id: "424Iq6rkWhg", channel: "ellaskins" },
     ],
   },
   {
@@ -169,8 +169,8 @@ export const techniques: Technique[] = [
       "Sell it — the technique is half performance.",
     ],
     videos: [
-      { id: "jRBijAiPjMI", title: "How to DJ Transition ANY SONG with Spinback Transition Effect", channel: "Gustav - DJ Tutorials & Mixes" },
-      { id: "xMUIr_hdoBc", title: "DJ Tutorial 36 | How To Conduct The Backspin Transition | | Valoramous", channel: "Valoramous" },
+      { id: "jRBijAiPjMI", channel: "Gustav - DJ Tutorials & Mixes" },
+      { id: "xMUIr_hdoBc", channel: "Valoramous" },
     ],
   },
   {
@@ -198,8 +198,8 @@ export const techniques: Technique[] = [
       "Bring the next track in under the decaying tail, on the downbeat.",
     ],
     videos: [
-      { id: "tkwM9vCmIbg", title: "How to Improve Your Echo Out Transitions", channel: "DJcityTV" },
-      { id: "mvYMZc6jgvg", title: "Emergency Exit Transitions: Echo and Reverb Out [Rekordbox]", channel: "DJFriendZone" },
+      { id: "tkwM9vCmIbg", channel: "DJcityTV" },
+      { id: "mvYMZc6jgvg", channel: "DJFriendZone" },
     ],
   },
   {
@@ -227,8 +227,8 @@ export const techniques: Technique[] = [
       "Release both filters as the incoming track takes over, then close the outgoing channel.",
     ],
     videos: [
-      { id: "UY3uiQ3cmPs", title: "3 PRO DJ FILTER TECHNIQUES to enhance your transitions", channel: "Club Ready DJ School" },
-      { id: "S7IdjUK_hhg", title: "EASY DJ Transition Using the Filter Effect on Pioneer XDJ-RX3 | Slex's DJ Tips #5", channel: "Slex Allen" },
+      { id: "UY3uiQ3cmPs", channel: "Club Ready DJ School" },
+      { id: "S7IdjUK_hhg", channel: "Slex Allen" },
     ],
   },
   {
@@ -255,8 +255,8 @@ export const techniques: Technique[] = [
       "On the tightest loop, cut to the incoming drop or beat 1.",
     ],
     videos: [
-      { id: "t_96CrNV2KU", title: "Looping techniques every DJ needs", channel: "Crossfader" },
-      { id: "lTb7iQ6MHAU", title: "3 Essential DJ Loops Every Beginner Must Learn (DJ Tips & Techniques)", channel: "Club Ready DJ School" },
+      { id: "t_96CrNV2KU", channel: "Crossfader" },
+      { id: "lTb7iQ6MHAU", channel: "Club Ready DJ School" },
     ],
   },
   {
@@ -284,8 +284,8 @@ export const techniques: Technique[] = [
       "The floor experiences a change of feel, not of tempo.",
     ],
     videos: [
-      { id: "CJNWR5OQt_A", title: "Easy Trick For Mixing Different Genres Using Half & Double Time BPMs", channel: "Digital DJ Tips" },
-      { id: "ZwV-gU6si6c", title: "The Art of DJing: CCL - Creative half/double time transitions", channel: "Resident Advisor" },
+      { id: "CJNWR5OQt_A", channel: "Digital DJ Tips" },
+      { id: "ZwV-gU6si6c", channel: "Resident Advisor" },
     ],
   },
   {
@@ -313,8 +313,8 @@ export const techniques: Technique[] = [
       "Choose the bridge for the music, not just the number.",
     ],
     videos: [
-      { id: "nrpp5AU5kSA", title: "How To Transition EASILY Between Different BPMs", channel: "Crossfader" },
-      { id: "WhHwuemFk4Q", title: "MIXING DIFFERENT BPM AND GENRE - 5 TOP BPM TRANSITIONS", channel: "DJ Phil Harris" },
+      { id: "nrpp5AU5kSA", channel: "Crossfader" },
+      { id: "WhHwuemFk4Q", channel: "DJ Phil Harris" },
     ],
   },
   {
@@ -343,8 +343,8 @@ export const techniques: Technique[] = [
       "Fade or kill the outgoing track once the new energy is established.",
     ],
     videos: [
-      { id: "tHNiVCqHvj4", title: "How to mix HOUSE & TECH like a PRO DJ!", channel: "Crossfader" },
-      { id: "l1JI56645nI", title: "3 DJ transition techniques for mixing house/techno", channel: "DropLab" },
+      { id: "tHNiVCqHvj4", channel: "Crossfader" },
+      { id: "l1JI56645nI", channel: "DropLab" },
     ],
   },
   {
@@ -373,8 +373,8 @@ export const techniques: Technique[] = [
       "Carry the vocal over that intro for continuity, then fade it.",
     ],
     videos: [
-      { id: "uftaGIzmgUM", title: "DJ Transition Techniques - Using Acapellas", channel: "Club Ready DJ School" },
-      { id: "RP0QfDa_xSc", title: "3 Best Ways to Use Acapellas in a DJ Set", channel: "DJ Carlo" },
+      { id: "uftaGIzmgUM", channel: "Club Ready DJ School" },
+      { id: "RP0QfDa_xSc", channel: "DJ Carlo" },
     ],
   },
   {
@@ -399,8 +399,8 @@ export const techniques: Technique[] = [
       "Land the incoming track on a downbeat, then relax the pitch back to zero.",
     ],
     videos: [
-      { id: "0QODLqaex1A", title: "How To Do a Tempo Change DJ Transition | Numark Mix Academy", channel: "Numark" },
-      { id: "mPe-ARRrlrE", title: "How to Transition Between Songs with Different BPM", channel: "Beatmatch Guru" },
+      { id: "0QODLqaex1A", channel: "Numark" },
+      { id: "mPe-ARRrlrE", channel: "Beatmatch Guru" },
     ],
   },
 ]

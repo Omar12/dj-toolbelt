@@ -2,7 +2,7 @@ import type { DJResource } from "./types"
 
 const V = "2026-08-23"
 
-const partA: DJResource[] = [
+export const resources: DJResource[] = [
   // ---------------------------------------------------------------- DISCOVER
   {
     id: "digdeeper",
@@ -494,9 +494,7 @@ const partA: DJResource[] = [
     formats: ["vinyl"],
     lastVerified: V,
   },
-]
 
-const partB: DJResource[] = [
   // --------------------------------------------------------- TRACK ANALYSIS
   {
     id: "mixed-in-key",
@@ -1139,8 +1137,6 @@ const partB: DJResource[] = [
     lastVerified: V,
   },
 ]
-
-export const resources: DJResource[] = [...partA, ...partB]
 
 export const resourceById = new Map(resources.map((r) => [r.id, r]))
 
