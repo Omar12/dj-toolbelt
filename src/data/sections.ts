@@ -1,4 +1,4 @@
-import type { Section, SectionId } from "./types"
+import type { Section } from "./types"
 
 export const sections: Section[] = [
   {
@@ -46,7 +46,3 @@ export const sections: Section[] = [
 ]
 
 export const sectionById = new Map(sections.map((s) => [s.id, s]))
-
-export function isSectionId(value: string): value is SectionId {
-  return sectionById.has(value as SectionId)
-}

@@ -6,12 +6,11 @@ export function Pill({
   tone = "default",
 }: {
   children: ReactNode
-  tone?: "default" | "signal" | "outline"
+  tone?: "default" | "signal"
 }) {
   const tones = {
     default: "bg-surface-2 text-muted border-line",
     signal: "bg-signal-dim/40 text-signal border-signal/40",
-    outline: "bg-transparent text-muted border-line",
   }
   return (
     <span
@@ -19,12 +18,6 @@ export function Pill({
     >
       {children}
     </span>
-  )
-}
-
-export function Panel({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <div className={`border border-line bg-surface ${className}`}>{children}</div>
   )
 }
 

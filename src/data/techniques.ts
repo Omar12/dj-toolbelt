@@ -404,5 +404,3 @@ export const techniques: Technique[] = [
     ],
   },
 ]
-
-export const techniqueById = new Map(techniques.map((t) => [t.id, t]))

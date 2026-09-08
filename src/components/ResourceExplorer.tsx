@@ -13,11 +13,9 @@ const PRICING: Pricing[] = ["free", "freemium", "paid"]
 export function ResourceExplorer({
   resources,
   initialCategories = [],
-  showCategoryFacet = true,
 }: {
   resources: DJResource[]
   initialCategories?: string[]
-  showCategoryFacet?: boolean
 }) {
   const [query, setQuery] = useState("")
   const [cats, setCats] = useState<string[]>(initialCategories)
@@ -72,14 +70,12 @@ export function ResourceExplorer({
           />
         </div>
 
-        {showCategoryFacet ? (
-          <FacetGroup
-            label="Category"
-            options={catOptions}
-            selected={cats}
-            onToggle={(v) => setCats(toggle(cats, v))}
-          />
-        ) : null}
+        <FacetGroup
+          label="Category"
+          options={catOptions}
+          selected={cats}
+          onToggle={(v) => setCats(toggle(cats, v))}
+        />
         <FacetGroup
           label="Price"
           options={PRICING}

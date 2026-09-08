@@ -13,7 +13,7 @@ const kindLabel: Record<SearchDoc["kind"], string> = {
   tool: "Built-in",
 }
 
-export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
+export function SearchBar() {
   const [query, setQuery] = useState("")
   const [open, setOpen] = useState(false)
   const boxRef = useRef<HTMLDivElement>(null)
@@ -52,7 +52,6 @@ export function SearchBar({ autoFocus = false }: { autoFocus?: boolean }) {
           id={`${listId}-input`}
           ref={inputRef}
           type="search"
-          autoFocus={autoFocus}
           value={query}
           onChange={(e) => {
             setQuery(e.target.value)
