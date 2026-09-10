@@ -115,4 +115,6 @@ export interface Technique {
   difficulty: SkillLevel
   genres: string[]
   walkthrough: string[]
+  /** YouTube tutorials demonstrating the technique. */
+  videos?: { id: string; title: string; channel: string }[]
 }
