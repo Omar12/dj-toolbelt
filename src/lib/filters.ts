@@ -5,7 +5,6 @@ import type {
   GenreRelation,
   Platform,
   Pricing,
-  SkillLevel,
   Technique,
   TechniqueCategory,
 } from "@/data/types"
@@ -17,8 +16,6 @@ export interface ResourceFilters {
   platforms?: Platform[]
   pricing?: Pricing[]
   workflows?: string[]
-  skill?: SkillLevel[]
-  formats?: string[]
 }
 
 const has = (list: string[] | undefined, wanted: string[] | undefined) =>
@@ -35,9 +32,7 @@ export function filterResources(all: DJResource[], f: ResourceFilters): DJResour
     if (!has(r.genres, f.genres)) return false
     if (!has(r.platforms, f.platforms)) return false
     if (!has(r.workflows, f.workflows)) return false
-    if (!has(r.formats, f.formats)) return false
     if (f.pricing?.length && !f.pricing.includes(r.pricing)) return false
-    if (f.skill?.length && (!r.skill || !f.skill.includes(r.skill))) return false
     return true
   })
 }

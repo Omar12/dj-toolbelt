@@ -116,5 +116,5 @@ export interface Technique {
   genres: string[]
   walkthrough: string[]
   /** YouTube tutorials demonstrating the technique. */
-  videos?: { id: string; title: string; channel: string }[]
+  videos?: { id: string; channel: string }[]
 }

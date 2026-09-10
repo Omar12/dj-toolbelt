@@ -128,7 +128,7 @@ A near-black room with four greys of separation and exactly one chromatic voice.
 ### Neutral
 - **Ink Black** (`#08080a`): the page ground. The room itself; everything else is placed on it.
 - **Crate Surface** (`#101013`): the standard panel — resource cards, workflow cards, tool shells, the search dropdown. One step out of the ground.
-- **Crate Surface Raised** (`#17171c`): inset and inner elements — input fields, chips, chain-diagram nodes, the favourite button, search-result hover.
+- **Crate Surface Raised** (`#17171c`): inset and inner elements — input fields, chips, chain-diagram nodes, the favorite button, search-result hover.
 - **Hairline** (`#26262d`): every border and divider in the system. The primary structural device.
 - **Sleeve White** (`#ededf0`): body and heading text at full strength.
 - **Dust Grey** (`#8b8b96`): descriptions, secondary readouts, nav links at rest, counts, and placeholder text. Roughly half the text on any screen.
@@ -185,7 +185,7 @@ The one exception is genuine floating: the search results dropdown, which leaves
 
 ## Shapes
 
-Square is the default and the point: cards, buttons, panels, inputs, nav items and chain nodes all have zero radius, so the interface reads as filed cards and faceplate cut-outs rather than web widgets. Radius exists in exactly one 4px step (`rounded-sm`), reserved for small badge-like objects that would look brittle squared off: metadata pills and the favourite-star button. The focus ring uses a 2px radius so it traces square corners cleanly.
+Square is the default and the point: cards, buttons, panels, inputs, nav items and chain nodes all have zero radius, so the interface reads as filed cards and faceplate cut-outs rather than web widgets. Radius exists in exactly one 4px step (`rounded-sm`), reserved for small badge-like objects that would look brittle squared off: metadata pills and the favorite-star button. The focus ring uses a 2px radius so it traces square corners cleanly.
 
 Borders carry the form language. Every container is defined by a 1px hairline, and the empty state inverts it to `border-dashed` — the only dashed stroke in the system — to read as an unfilled slot. The recurring silhouettes are the hairline rectangle, the mono chain node (`TRACK › LABEL › DJ`), the two concentric Camelot rings, and the `.waveform` strip: a repeating 1px-on-4px linear gradient masked to fade at both ends, used as a divider beside the wordmark.
 
@@ -210,7 +210,7 @@ Borders carry the form language. Every container is defined by a 1px hairline, a
 - **Shadow strategy:** none — see Elevation & Depth.
 - **Border:** 1px hairline; hover brightens it to Dust Grey at 60% alpha, and accent-linked cards (home actions, collections) brighten to Cue Orange at 60% instead.
 - **Internal padding:** 16px for resource cards, 20px for workflow, collection and tool panels.
-- **Behavior:** whole-card link via an `after:absolute after:inset-0` overlay on the title anchor, with interactive children (the favourite star) lifted to `relative z-10`. Card titles turn Cue Orange on hover.
+- **Behavior:** whole-card link via an `after:absolute after:inset-0` overlay on the title anchor, with interactive children (the favorite star) lifted to `relative z-10`. Card titles turn Cue Orange on hover.
 - **Empty state:** dashed hairline, centred Dust Grey body text, 32px padding, and copy that names the next action ("Loosen one and try again").
 
 ### Inputs / Fields
