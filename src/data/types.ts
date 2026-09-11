@@ -57,6 +57,8 @@ export interface WorkflowStep {
   title: string
   detail: string
   resourceIds?: string[]
+  /** YouTube tutorials for this step; `t` is the start offset in seconds. */
+  videos?: { id: string; channel: string; t?: number }[]
 }
 
 export interface Workflow {

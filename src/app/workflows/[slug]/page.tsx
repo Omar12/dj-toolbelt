@@ -80,6 +80,26 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
                       ))}
                     </ul>
                   ) : null}
+                  {step.videos?.length ? (
+                    <p className="mt-2 text-sm">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                        Watch{" "}
+                      </span>
+                      {step.videos.map((video, jndex) => (
+                        <span key={video.id}>
+                          {jndex > 0 && <span className="text-muted"> · </span>}
+                          <a
+                            href={`https://www.youtube.com/watch?v=${video.id}${ video.t ? `&t=${video.t}s` : ""}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-signal underline underline-offset-2"
+                          >
+                            {video.channel}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                  ) : null}
                 </div>
               </li>
             )
