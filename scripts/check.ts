@@ -5,6 +5,7 @@ import { bpmFromTaps, pitchPercent, transitionAdvice, recordingSizeMb, encodedSi
 import { numProblem, numValue } from "../src/lib/numfield.ts"
 import { filterTechniques } from "../src/lib/filters.ts"
 import { energyFromScores } from "../src/lib/energy.ts"
+import { BARS, mixAt } from "../src/lib/blend.ts"
 import { techniques } from "../src/data/techniques.ts"
 
 // Camelot ↔ musical key mapping anchors.
@@ -63,6 +64,11 @@ assert.equal(energyFromScores([1, 1, 1, 1, 1]), 1)
 assert.equal(energyFromScores([2, 2, 2, 2, 2]), 3)
 assert.equal(energyFromScores([3, 3, 3, 3, 3]), 5)
 assert.equal(energyFromScores([1, 2, 2, 2, 2]), 3)
+
+// Blend: with the bass swap the low end never leaves 0 dB; without it two basslines stack to +6 dB.
+for (let t = 0; t <= BARS; t += 1 / 64) assert.ok(Math.abs(mixAt(t, 1).db) < 1e-9)
+assert.equal(mixAt(16, 0).db.toFixed(1), "6.0")
+assert.equal(mixAt(32, 1).faderA, 0)
 
 console.log("all checks passed")
 
