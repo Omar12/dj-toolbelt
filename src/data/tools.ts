@@ -17,5 +17,6 @@ export const builtInTools: BuiltInTool[] = [
   { id: "key-compatibility", name: "Harmonic Compatibility Checker", description: "Two keys in, a verdict out — with the reason it works or does not.", tags: ["harmonic", "compatibility", "key"] },
   { id: "set-planner-math", name: "Set Duration & Track Count", description: "How many tracks fill a slot at a given average track length.", question: "How many tracks fill the slot?", tags: ["set", "duration", "planning"] },
   { id: "storage-calculator", name: "Recording Storage Calculator", description: "File size for a recorded set at any sample rate, bit depth or bitrate.", tags: ["recording", "storage", "wav"] },
+  { id: "energy-evaluator", name: "Track Energy Evaluator", description: "Rate drums, bass, rhythm, density and tension to estimate a track's 1–5 energy.", question: "How much energy does this track have?", tags: ["energy", "track analysis", "crates"] },
   { id: "gig-timeline", name: "Gig Timeline Generator", description: "Turn a set time and length into a phase-by-phase plan you can print.", tags: ["gig", "timeline", "planning"] },
 ]

@@ -30,6 +30,7 @@ const extras: Record<string, { href: string; title: string; detail: string }[]> 
     { href: "/collections/best-tools-for-publishing-mixes", title: "Publishing collection", detail: "Master, package, upload." },
   ],
   learn: [
+    { href: "/learn/track-energy", title: "Understanding Track Energy", detail: "Rate, compare and program energy on a 1–5 scale." },
     { href: "/transitions", title: "Transition Toolkit", detail: "Technique cards you can drill." },
     { href: "/workflows", title: "All workflows", detail: "Every process on the site, start to finish." },
   ],

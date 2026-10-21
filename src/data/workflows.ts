@@ -267,6 +267,27 @@ export const workflows: Workflow[] = [
     ],
   },
   {
+    id: "find-tracks-that-work-together",
+    name: "Find Tracks That Work Together",
+    question: "I love every track. Why doesn't the set flow?",
+    description:
+      "The issue isn't necessarily your mixing technique. You're choosing good individual tracks without knowing whether they create a coherent musical progression. Read every pairing on three dimensions — energy, groove, mood — and change one at a time.",
+    section: "prepare",
+    chain: ["Anchor", "5 candidates", "Continuity test", "3-track chain", "Mix + record", "Mini-crate"],
+    skill: "beginner",
+    tags: ["set planning", "energy", "programming", "mini-crate"],
+    resourceIds: ["spotify", "rekordbox", "bandcamp", "beatport"],
+    duration: "30–45 min",
+    steps: [
+      { title: "Choose an anchor track", time: "5 min", detail: "Pick one track from your library that you know well and enjoy playing. Listen to its main groove and name its energy (1–5), its groove (rolling, funky, bouncy, driving, broken) and its mood (dark, uplifting, hypnotic, playful, soulful).", output: "One anchor track with a clear musical identity." },
+      { title: "Find five candidate tracks", time: "10 min", detail: "Search your existing library first, then your Spotify DJ Candidates playlist if necessary. Each candidate must share at least two characteristics with the anchor. Don't prioritize BPM or key yet — they matter for executing a transition, but they don't guarantee musical compatibility.", resourceIds: ["spotify"], output: "Five potential companions for your anchor." },
+      { title: "Run the continuity test", time: "10 min", detail: "Play 45–60 seconds of the anchor's main groove, then switch directly to the candidate's main groove. No beatmatching, no EQ transitions, no effects. Judge energy, groove and mood, and classify the pairing.", output: "Two promising companions with identifiable roles." },
+      { title: "Build a three-track chain", time: "5–10 min", detail: "Arrange the tracks as Track A → Anchor → Track B and choose one programming objective. Start with maintaining energy — it's the easiest way to develop reliable musical continuity.", output: "One coherent three-track sequence." },
+      { title: "Test the actual transitions", time: "10 min", detail: "Now mix them. If a transition sounds bad, first decide whether the problem is technical or musical: a good pairing may need a different transition point, but a clean technical transition can't always rescue an unsuitable pairing. Record the sequence and listen back.", resourceIds: ["rekordbox"], output: "One tested and recorded musical sequence." },
+      { title: "Save the relationship", detail: "Add the sequence to a mini-crate and write down why each pairing works. Keep unsuccessful experiments in a backlog rather than deleting promising music. Over time, these relationships become reusable building blocks for longer sets.", output: "One reusable mini-crate with notes." },
+    ],
+  },
+  {
     id: "learn-harmonic-mixing",
     name: "Learn Harmonic Mixing",
     question: "Why do some blends clash even when the beats line up?",

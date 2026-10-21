@@ -4,6 +4,7 @@ import { allKeys, compatibleKeys, isCompatible, keyAfterPitch, parseKey } from "
 import { bpmFromTaps, pitchPercent, transitionAdvice, recordingSizeMb, encodedSizeMb } from "../src/lib/bpm.ts"
 import { numProblem, numValue } from "../src/lib/numfield.ts"
 import { filterTechniques } from "../src/lib/filters.ts"
+import { energyFromScores } from "../src/lib/energy.ts"
 import { techniques } from "../src/data/techniques.ts"
 
 // Camelot ↔ musical key mapping anchors.
@@ -56,6 +57,12 @@ assert.equal(bpmFromTaps([1]).bpm, 0)
 // 1 minute of 48k/24-bit stereo ≈ 17.28 MB.
 assert.equal(recordingSizeMb(1, 48000, 24, 2).toFixed(2), "17.28")
 assert.equal(encodedSizeMb(60, 320).toFixed(1), "144.0")
+
+// Energy: all-low → 1, all-medium → 3, all-high → 5; average 1.8 → 2.6 → 3.
+assert.equal(energyFromScores([1, 1, 1, 1, 1]), 1)
+assert.equal(energyFromScores([2, 2, 2, 2, 2]), 3)
+assert.equal(energyFromScores([3, 3, 3, 3, 3]), 5)
+assert.equal(energyFromScores([1, 2, 2, 2, 2]), 3)
 
 console.log("all checks passed")
 

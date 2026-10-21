@@ -2,11 +2,12 @@ import { builtInTools } from "@/data/tools"
 import { BpmTapper, BpmTransition, HalfDouble, ToolShell } from "@/components/tools/BpmTools"
 import { CamelotWheel, KeyCompatibility, KeyConverter } from "@/components/tools/KeyTools"
 import { GigTimeline, SetMath, StorageCalculator } from "@/components/tools/PlanningTools"
+import { EnergyEvaluator } from "@/components/tools/EnergyTools"
 
 export const metadata = {
   title: "Tools",
   description:
-    "Built-in DJ utilities: BPM tapper, transition calculator, Camelot wheel, key converter, set and storage maths. All client-side.",
+    "Built-in DJ utilities: BPM tapper, transition calculator, Camelot wheel, key converter, track energy evaluator, set and storage maths. All client-side.",
 }
 
 const render: Record<string, React.ReactNode> = {
@@ -18,6 +19,7 @@ const render: Record<string, React.ReactNode> = {
   "key-compatibility": <KeyCompatibility />,
   "set-planner-math": <SetMath />,
   "storage-calculator": <StorageCalculator />,
+  "energy-evaluator": <EnergyEvaluator />,
   "gig-timeline": <GigTimeline />,
 }
 
@@ -28,7 +30,7 @@ export default function ToolsPage() {
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-signal">Built in</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">Tools</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted">
-          Nine utilities that run entirely in this browser. Nothing is uploaded, nothing is stored.
+          Ten utilities that run entirely in this browser. Nothing is uploaded, nothing is stored.
         </p>
         <nav aria-label="Tools" className="mt-5 flex flex-wrap gap-1.5">
           {builtInTools.map((t) => (

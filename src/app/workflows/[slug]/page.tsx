@@ -1,9 +1,16 @@
+import type { ReactNode } from "react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { workflowById, workflows } from "@/data/workflows"
 import { getResources } from "@/data/resources"
 import { ResourceGrid } from "@/components/ResourceCard"
 import { ChainDiagram, Pill, SectionHeading } from "@/components/ui"
+import { trackCompatibility } from "@/components/workflows/TrackCompatibility"
+
+/** Optional visuals for workflows that need more than the step list. */
+const extras: Record<string, { before?: ReactNode; steps?: ReactNode[]; after?: ReactNode }> = {
+  "find-tracks-that-work-together": trackCompatibility,
+}
 
 export function generateStaticParams() {
   return workflows.map((w) => ({ slug: w.id }))
@@ -20,6 +27,7 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
   const w = workflowById.get(slug)
   if (!w) notFound()
 
+  const extra = extras[w.id]
   const tools = getResources(w.resourceIds)
   const next = workflows.filter(
     (o) => o.id !== w.id && o.tags.some((t) => w.tags.includes(t) || o.section === w.section),
@@ -40,6 +48,7 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
         <p className="mt-3 max-w-2xl leading-relaxed text-muted">{w.description}</p>
         <div className="mt-4 flex flex-wrap gap-1.5">
           <Pill tone="signal">{w.skill}</Pill>
+          {w.duration ? <Pill>{w.duration}</Pill> : null}
           {w.tags.map((t) => (
             <Pill key={t}>{t}</Pill>
           ))}
@@ -53,6 +62,8 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
         <ChainDiagram nodes={w.chain} />
       </section>
 
+      {extra?.before}
+
       <section className="pb-10">
         <SectionHeading eyebrow="Step by step" title="How to run it" />
         <ol className="space-y-3">
@@ -63,9 +74,23 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
                 <span className="font-mono text-sm text-signal" aria-hidden>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <div className="min-w-0">
-                  <h3 className="text-base font-semibold tracking-tight">{step.title}</h3>
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-base font-semibold tracking-tight">
+                    {step.title}
+                    {step.time ? (
+                      <span className="ml-2 font-mono text-[11px] font-normal uppercase tracking-wider text-muted">
+                        {step.time}
+                      </span>
+                    ) : null}
+                  </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted">{step.detail}</p>
+                  {extra?.steps?.[i]}
+                  {step.output ? (
+                    <p className="mt-3 text-sm">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-signal">Output </span>
+                      {step.output}
+                    </p>
+                  ) : null}
                   {stepTools.length ? (
                     <ul className="mt-2 flex flex-wrap gap-1.5">
                       {stepTools.map((t) => (
@@ -106,6 +131,8 @@ export default async function WorkflowPage({ params }: { params: Promise<{ slug:
           })}
         </ol>
       </section>
+
+      {extra?.after}
 
       {tools.length ? (
         <section className="pb-10">

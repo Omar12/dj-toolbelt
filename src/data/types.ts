@@ -57,6 +57,10 @@ export interface WorkflowStep {
   title: string
   detail: string
   resourceIds?: string[]
+  /** Rough time budget, e.g. "10 minutes". */
+  time?: string
+  /** What you should have in hand when the step is done. */
+  output?: string
   /** YouTube tutorials for this step; `t` is the start offset in seconds. */
   videos?: { id: string; channel: string; t?: number }[]
 }
@@ -73,6 +77,8 @@ export interface Workflow {
   resourceIds: string[]
   skill: SkillLevel
   tags: string[]
+  /** Total time budget, e.g. "30–45 min". */
+  duration?: string
 }
 
 export interface Collection {
