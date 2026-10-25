@@ -208,7 +208,7 @@ Borders carry the form language. Every container is defined by a 1px hairline, a
 - **Corner style:** square (0 radius).
 - **Background:** Crate Surface (`#101013`) on Ink Black; internal insets use Crate Surface Raised.
 - **Shadow strategy:** none — see Elevation & Depth.
-- **Border:** 1px hairline; hover brightens it to Dust Grey at 60% alpha, and accent-linked cards (home actions, collections) brighten to Cue Orange at 60% instead.
+- **Border:** 1px hairline; hover brightens it to Dust Grey at 60% alpha, and accent-linked cards (the running order's workflow panels, collections) brighten to Cue Orange at 60% instead.
 - **Internal padding:** 16px for resource cards, 20px for workflow, collection and tool panels.
 - **Behavior:** whole-card link via an `after:absolute after:inset-0` overlay on the title anchor, with interactive children (the favorite star) lifted to `relative z-10`. Card titles turn Cue Orange on hover.
 - **Empty state:** dashed hairline, centred Dust Grey body text, 32px padding, and copy that names the next action ("Loosen one and try again").
@@ -235,7 +235,15 @@ Selecting a key lights it and its four compatible neighbours and leaves the othe
 It is the clearest statement of the system: data as instrument, colour only where it carries meaning.
 
 ### Chain Diagram (signature component)
-A wrapping ordered list of mono uppercase nodes on Crate Surface Raised separated by a Cue Orange `›`. It renders a workflow as a signal path (`TRACK › LABEL › DJ`) and is the one place the product's sequencing idea becomes a picture.
+A wrapping ordered list of mono uppercase nodes on Crate Surface Raised separated by a Cue Orange `›`. It renders a workflow as a signal path (`TRACK › LABEL › DJ`) and is the one place the product's sequencing idea becomes a picture at the scale of a single workflow. The Running Order is the same idea at the scale of the whole product.
+
+### Running Order (signature component)
+The homepage path: the five jobs — Dig › Prepare › Mix › Record › Publish — in the order they happen, resolved from `homeActions` in `src/data/stages.ts`. Learn and Tools are deliberately off the path; they sit beside it as "Learn alongside / Work it out now", because they are picked up between any two stages, not after the last. One heading carries a two-button view toggle (square, hairline-joined, mono labels; the pressed button takes the selected-chip treatment of `bg-signal-dim/40` with Cue Orange text). The choice persists in `localStorage` (`dj-toolbelt:path-view`).
+
+- **All stages** (default): a tracklist. One row per job on a hairline divider; a large mono step number in Dust Grey sits on a 1px vertical rail that runs between the numbers; the mono stage name above the section question as the row title; the stage's start-here workflow as a Crate Surface panel carrying its step count and a dense Chain Diagram; and a right column (below `lg`, beneath the panel) listing the tools to "reach for" and a link to the rest of the section's workflows. The step numbers are earned: here the sequence itself is the information.
+- **One at a time**: a five-segment tab strip (`role="tablist"`, roving tabindex, arrow/Home/End keys). Each tab has a 4px top bar, like a phrase counter: solid Cue Orange on the current stage, Cue Orange Dim on stages already passed, Crate Surface Raised on stages still ahead. Below the strip is a single panel. The question is the headline, and the start-here workflow is the one accent-filled panel on the screen (dim orange at 30%, orange border at 60%). Tools and other routes sit in a hairline-ruled side column, and ghost Back / "Then <next>" buttons sit along the foot. The last-open stage persists (`dj-toolbelt:stage`), so an interrupted session resumes in place.
+
+Both views render from the same `stages` data, so they cannot drift. Both obey The Hover Is Colour, Not Height Rule: no arrow nudges, no lifts.
 
 ## Do's and Don'ts
 
