@@ -1,20 +1,20 @@
 import Link from "next/link"
-import { homeActions } from "@/data/actions"
 import { resources } from "@/data/resources"
 import { workflows } from "@/data/workflows"
 import { collections } from "@/data/collections"
 import { builtInTools } from "@/data/tools"
+import { stages } from "@/data/stages"
 import { ResourceGrid } from "@/components/ResourceCard"
-import { WorkflowCard } from "@/components/WorkflowCard"
+import { PathViews } from "@/components/path/PathViews"
+import { RunningOrder } from "@/components/path/RunningOrder"
 import { SectionHeading, TextLink } from "@/components/ui"
 
-const diggingRoutes = [
-  "search-by-sound",
-  "dig-by-dj",
-  "dig-by-label",
-  "dig-by-scene",
-  "dig-by-era",
-  "dig-by-sample",
+/** Off the path: picked up between any two stages. */
+const learnLinks = [
+  { href: "/learn/perfect-blend", name: "The Perfect Blend" },
+  { href: "/learn/track-energy", name: "Understanding Track Energy" },
+  { href: "/transitions", name: "Transition Toolkit" },
+  { href: "/learn", name: "Everything in Learn" },
 ]
 
 /** The four instruments reached for mid-session. Fixed contract: each must carry a question. */
@@ -30,13 +30,10 @@ const bandTools = bandToolIds.map((id) => {
 
 export default function Home() {
   const featured = resources.filter((r) => r.featured).slice(0, 6)
-  const digging = diggingRoutes
-    .map((id) => workflows.find((w) => w.id === id))
-    .filter((w): w is NonNullable<typeof w> => Boolean(w))
 
   return (
     <div className="mx-auto max-w-6xl px-4">
-      <section className="border-b border-line py-12 sm:py-16">
+      <section className="py-12 sm:py-16">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-signal">
           {resources.length} resources · {workflows.length} workflows ·{" "}
           <Link href="/tools" className="underline-offset-4 hover:underline">
@@ -52,56 +49,39 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="py-10">
-        <SectionHeading eyebrow="Work it out now" title="What do I need to work out right now?">
-          <TextLink href="/tools">All {builtInTools.length} tools</TextLink>
-        </SectionHeading>
-        <div className="grid gap-3 lg:grid-cols-2">
-          {bandTools.map((t) => (
-            <Link
-              key={t.id}
-              href={`/tools#${t.id}`}
-              className="group flex flex-col justify-between gap-4 border border-line bg-surface p-5 transition-colors hover:border-signal/60 hover:bg-surface-2 sm:p-6"
-            >
-              <h3 className="max-w-[22ch] text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-signal sm:text-2xl">
-                {t.question}
-              </h3>
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition-colors group-hover:text-signal">
-                {t.name}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <PathViews list={<RunningOrder />} stages={stages} />
 
-      <section className="py-10">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {homeActions.map((a) => (
-            <Link
-              key={a.verb}
-              href={a.href}
-              className="group flex flex-col border border-line bg-surface p-5 transition-colors hover:border-signal/60 hover:bg-surface-2"
-            >
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition-colors group-hover:text-signal">
-                {a.verb}
-              </span>
-              <span className="mt-3 block text-base font-semibold leading-snug tracking-tight transition-colors group-hover:text-signal">
-                {a.title}
-              </span>
-              <span className="mt-auto block pt-2 text-sm leading-relaxed text-muted">{a.detail}</span>
-            </Link>
-          ))}
+      <section className="grid gap-px border border-line bg-line lg:grid-cols-[1fr_2fr]">
+        <div className="bg-surface p-5">
+          <h2 className="text-base font-semibold tracking-tight">Learn alongside</h2>
+          <p className="mt-1 text-sm text-muted">Not a stage. Pick it up between any two.</p>
+          <ul className="mt-4 space-y-2">
+            {learnLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-sm hover:text-signal">
+                  {l.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-      </section>
-
-      <section className="py-10">
-        <SectionHeading eyebrow="I need new music" title="Six ways to dig">
-          <TextLink href="/workflows">All workflows</TextLink>
-        </SectionHeading>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {digging.map((w) => (
-            <WorkflowCard key={w.id} workflow={w} />
-          ))}
+        <div className="bg-surface p-5">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <h2 className="text-base font-semibold tracking-tight">Work it out now</h2>
+            <TextLink href="/tools">All {builtInTools.length} tools</TextLink>
+          </div>
+          <ul className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+            {bandTools.map((t) => (
+              <li key={t.id}>
+                <Link href={`/tools#${t.id}`} className="group block">
+                  <span className="block text-sm font-semibold tracking-tight transition-colors group-hover:text-signal">
+                    {t.question}
+                  </span>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">{t.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -112,7 +92,7 @@ export default function Home() {
         <ResourceGrid resources={featured} />
       </section>
 
-      <section className="py-10">
+      <section className="pb-10">
         <SectionHeading eyebrow="Curated" title="Collections">
           <TextLink href="/collections">All collections</TextLink>
         </SectionHeading>
